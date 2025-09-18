@@ -19,5 +19,4 @@ export const skills = [
   "Kotlin",
   "Java",
   "CSS",
-  "",
 ];

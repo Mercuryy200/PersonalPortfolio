@@ -1,7 +1,13 @@
-export default function Footer() {
+interface FooterProps {
+  t: {
+    rights: string;
+  };
+}
+
+export default function Footer({ t }: FooterProps) {
   return (
-    <div className="w-full text-center py-4 fixed bottom-0 bg bg-white">
-      Rima Nafougui | All rights reserved
+    <div className="w-full text-center py-4 fixed bottom-0 bg-white">
+      Rima Nafougui | {t.rights} &copy; 2025
     </div>
   );
 }
