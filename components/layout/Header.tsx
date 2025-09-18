@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
-import { Language } from "@/lib/translation";
+import { Language, Translation } from "@/lib/translation";
 
 interface Props {
-  t: any;
+  t: Translation;
   language: Language;
   setLanguage: (lang: Language) => void;
 }
