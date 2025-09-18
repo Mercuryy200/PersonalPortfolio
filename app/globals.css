@@ -27,3 +27,11 @@ body {
 html {
   scroll-behavior: smooth;
 }
+.navLink :hover{
+  color: #1f2937;
+  transform: scale(1.10);
+}
+
+.navLink  {
+  transition: transform 0.3s;
+}

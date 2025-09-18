@@ -20,11 +20,36 @@ export default function Header({ t, language, setLanguage }: Props) {
         />
       </Link>
       <div className="flex flex-1 justify-evenly text-lg ">
-        <Link href="#about"> {t.nav.about}</Link>
-        <Link href="#projects">{t.nav.projects}</Link>
-        <Link href="#experience">{t.nav.experience}</Link>
-        <Link href="#skills">{t.nav.skills}</Link>
-        <Link href="#contact">{t.nav.contact}</Link>
+        <Link
+          href="#about"
+          className="  hover: text-gray-800 hover:scale-110 transition-transform duration-300"
+        >
+          {t.nav.about}
+        </Link>
+        <Link
+          href="#projects"
+          className="  hover: text-gray-800 hover:scale-110 transition-transform duration-300"
+        >
+          {t.nav.projects}
+        </Link>
+        <Link
+          href="#experience"
+          className="  hover: text-gray-800 hover:scale-110 transition-transform duration-300"
+        >
+          {t.nav.experience}
+        </Link>
+        <Link
+          href="#skills"
+          className="  hover: text-gray-800 hover:scale-110 transition-transform duration-300"
+        >
+          {t.nav.skills}
+        </Link>
+        <Link
+          href="#contact"
+          className="  hover: text-gray-800 hover:scale-110 transition-transform duration-300"
+        >
+          {t.nav.contact}
+        </Link>
         <LanguageSwitcher language={language} setLanguage={setLanguage} />{" "}
       </div>
     </div>

@@ -1,5 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 interface HeroProps {
   t: {
     description: string;
@@ -30,6 +33,24 @@ export default function Hero({ t }: HeroProps) {
         viewport={{ once: true }}
       >
         {t.description}
+        <div id="social-Links" className="flex gap-2 mt-6 justify-center">
+          <Link
+            href="https://github.com/Mercuryy200"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-gray-800  hover:scale-110 transition-transform duration-300"
+          >
+            <FontAwesomeIcon icon={faGithub} size="2x" />
+          </Link>
+          <Link
+            href="https://github.com/Mercuryy200"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-600 hover:text-gray-800 hover:scale-110 transition-transform duration-300"
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="2x" />
+          </Link>
+        </div>
       </motion.h2>
     </div>
   );

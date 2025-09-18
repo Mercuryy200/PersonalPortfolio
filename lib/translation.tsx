@@ -36,10 +36,11 @@ export const translations = {
       },
     },
     skills: {
-      title: "Tech Stack",
+      title: "Skills",
       languages: "Languages",
       frontend: "Frontend",
       backend: "Backend",
+      others: "Others",
     },
     projects: {
       title: "Projects",
@@ -49,6 +50,12 @@ export const translations = {
     },
     footer: {
       rights: "All rights reserved",
+    },
+    experience: {
+      title: "Experience",
+    },
+    contact: {
+      title: "Contact Me",
     },
 
     // ... more sections
@@ -90,10 +97,11 @@ export const translations = {
         "  Welcome! I have been building this website in order to showcase my abilities as a software developer. Feel free to explore and learn more about me.",
     },
     skills: {
-      title: "Tech Stack",
+      title: "Compétences",
       languages: "Languages",
       frontend: "Frontend",
       backend: "Backend",
+      others: "Autres",
     },
     projects: {
       title: "Projets",
@@ -104,6 +112,13 @@ export const translations = {
     footer: {
       rights: "Tous droits réservés",
     },
+    experience: {
+      title: "Expérience",
+    },
+    contact: {
+      title: "Contactez Moi",
+    },
+
     // ... more sections
   },
 };
