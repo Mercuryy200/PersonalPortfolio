@@ -4,7 +4,7 @@ import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Divider } from "@heroui/divider";
+import { Divider } from "@heroui/react";
 import { useState } from "react";
 import { translations, Language } from "@/lib/translation";
 
