@@ -1,10 +1,12 @@
-// tailwind.config.js
-const {heroui} = require("@heroui/theme");
+// tailwind.config.js (ESM)
+import { heroui } from "@heroui/theme";
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./node_modules/@heroui/theme/dist/components/(accordion|divider).js",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@heroui/theme/dist/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {},

@@ -43,7 +43,7 @@ export default function Hero({ t }: HeroProps) {
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </Link>
           <Link
-            href="https://github.com/Mercuryy200"
+            href="https://www.linkedin.com/in/rima-nafougui-b0434b295"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-600 hover:text-gray-800 hover:scale-110 transition-transform duration-300"

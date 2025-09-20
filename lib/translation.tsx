@@ -44,9 +44,24 @@ export const translations = {
     },
     projects: {
       title: "Projects",
-      viewAll: "View All",
-      github: "GitHub",
-      demo: "Demo",
+      items: {
+        project1: {
+          title: "Personal Portfolio",
+          description:
+            "My personal portfolio, built with Next.js and Tailwind CSS, showcases my web development skills. It features my projects, skills, and experiences, offering a modern and responsive user interface. Explore it to learn more about my journey as a developer.",
+          features: [
+            "Built with Next.js for optimal performance.",
+            "Responsive design using Tailwind CSS.",
+            "Showcases projects and skills.",
+            "Framer Motion integration for smooth animations.",
+            "Vector icons with FontAwesome.",
+            "Easy deployment via Vercel.",
+          ],
+          technologies:
+            "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel",
+          github: "https://github.com/Mercuryy200/PersonalPortfolio",
+        },
+      },
     },
     footer: {
       rights: "All rights reserved",
@@ -57,16 +72,14 @@ export const translations = {
     contact: {
       title: "Contact Me",
     },
-
-    // ... more sections
   },
   fr: {
     nav: {
       about: "À Propos",
-      skills: "Technologies",
-      experience: "Expérience",
+      skills: "Compétences",
+      experience: "Expériences",
       projects: "Projets",
-      contact: "Contact",
+      contact: "Contactez-moi",
     },
     about: {
       title: "À Propos de Moi",
@@ -92,9 +105,9 @@ export const translations = {
       },
     },
     hero: {
-      intro: "Hi, I am",
+      intro: "Bonjour, je suis",
       description:
-        "  Welcome! I have been building this website in order to showcase my abilities as a software developer. Feel free to explore and learn more about me.",
+        " Bienvenue! J'ai construit ce site web afin de mettre en valeur mes compétences en tant que développeur logiciel. N'hésitez pas à explorer et à en apprendre davantage sur moi.",
     },
     skills: {
       title: "Compétences",
@@ -105,9 +118,24 @@ export const translations = {
     },
     projects: {
       title: "Projets",
-      viewAll: "Voir Tout",
-      github: "GitHub",
-      demo: "Démo",
+      items: {
+        project1: {
+          title: "Portfolio Personnel",
+          description:
+            "Mon portfolio personnel, construit avec Next.js et Tailwind CSS, met en avant mes compétences en développement web. Il présente mes projets, compétences et expériences, offrant une interface utilisateur moderne et réactive. Explorez-le pour découvrir mon parcours en tant que développeur.",
+          features: [
+            "Développement avec Next.js pour des performances optimales.",
+            "Design réactif utilisant Tailwind CSS.",
+            "Présentation de projets et compétences.",
+            "Intégration de Framer Motion pour des animations fluides.",
+            "Icônes vectorielles avec FontAwesome.",
+            "Déploiement facile via Vercel.",
+          ],
+          technologies:
+            "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel",
+          github: "https://github.com/Mercuryy200/PersonalPortfolio",
+        },
+      },
     },
     footer: {
       rights: "Tous droits réservés",
@@ -118,11 +146,16 @@ export const translations = {
     contact: {
       title: "Contactez Moi",
     },
-
-    // ... more sections
   },
 };
 
 export type Language = "en" | "fr";
 export type TranslationKey = keyof typeof translations.en;
 export type Translation = typeof translations.en;
+export type Project = {
+  title: string;
+  description: string;
+  features: string[];
+  technologies: string;
+  github: string;
+};

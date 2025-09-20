@@ -10,6 +10,9 @@ import Contact from "@/components/sections/Contact";
 import { Divider } from "@heroui/react";
 import { useState } from "react";
 import { translations, Language } from "@/lib/translation";
+import { HeroUIProvider } from "@heroui/react";
+import * as React from "react";
+import "./globals.css";
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en");
@@ -17,20 +20,22 @@ export default function Home() {
 
   return (
     <>
-      <Header t={t} language={language} setLanguage={setLanguage} />
-      <Hero t={t.hero} />
-      <Divider />
-      <About t={t.about} />
-      <Divider />
-      <Projects t={t.projects} />
-      <Divider />
-      <Experience t={t.experience} />
-      <Divider />
-      <Skills t={t.skills} />
-      <Divider />
-      <Contact t={t.contact} />
-      <Divider />
-      <Footer t={t.footer} />
+      <HeroUIProvider>
+        <Header t={t} language={language} setLanguage={setLanguage} />
+        <Hero t={t.hero} />
+        <Divider />
+        <About t={t.about} />
+        <Divider />
+        <Projects t={t.projects} />
+        <Divider />
+        <Experience t={t.experience} />
+        <Divider />
+        <Skills t={t.skills} />
+        <Divider />
+        <Contact t={t.contact} />
+        <Divider />
+        <Footer t={t.footer} />
+      </HeroUIProvider>
     </>
   );
 }
