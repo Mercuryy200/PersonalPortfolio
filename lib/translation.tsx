@@ -71,6 +71,23 @@ export const translations = {
     },
     contact: {
       title: "Contact Me",
+      name: {
+        errorMessage: "Please enter a valid name",
+        label: "Full Name",
+        placeholder: "Enter your full name",
+      },
+      email: {
+        errorMessage: "Please enter a valid email",
+        label: "Email",
+        placeholder: "Enter your email",
+      },
+      message: {
+        errorMessage: "Please enter a message",
+        label: "Message",
+        placeholder: "Your message...",
+      },
+      submit: "Submit",
+      reset: "Reset",
     },
   },
   fr: {
@@ -145,6 +162,23 @@ export const translations = {
     },
     contact: {
       title: "Contactez Moi",
+      name: {
+        errorMessage: "Veuillez entrer un nom valide ",
+        label: "Nom Complet",
+        placeholder: "Entez votre nom complet",
+      },
+      email: {
+        errorMessage: "Veuillez entrer une adresse courriel valide",
+        label: "Adresse courriel",
+        placeholder: "Entrez votre addresse courriel",
+      },
+      message: {
+        errorMessage: "Veuillez enter un message",
+        label: "Message",
+        placeholder: "Votre message...",
+      },
+      submit: "Soumettre",
+      reset: "Refaire",
     },
   },
 };

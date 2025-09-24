@@ -30,7 +30,6 @@ export default function Skills({ t }: SkillsProp) {
         transition={{ delay: 0.3, duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h3>{t.backend}</h3>
         <div className=" flex justify-around gap-4 mt-4 flex-wrap">
           {skills.map((skill) => (
             <TechCards key={skill} skill={skill} />

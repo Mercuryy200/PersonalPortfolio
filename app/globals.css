@@ -3,7 +3,7 @@
 @source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
 :root {
-  --background: #FFFFFF ;
+  --background: #ffffff;
   --foreground: #171717;
 }
 
@@ -21,7 +21,6 @@
   }
 }
 
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -30,11 +29,16 @@ body {
 html {
   scroll-behavior: smooth;
 }
-.navLink :hover{
+.navLink :hover {
   color: #1f2937;
-  transform: scale(1.10);
+  transform: scale(1.1);
 }
 
-.navLink  {
+.navLink {
   transition: transform 0.3s;
+}
+input:focus,
+textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }

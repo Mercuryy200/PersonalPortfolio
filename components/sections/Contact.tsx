@@ -1,11 +1,28 @@
 "use client";
 import { motion } from "framer-motion";
 import React from "react";
-import { Form, Input, Button } from "@heroui/react";
+import { Form, Input, Button, Textarea } from "@heroui/react";
 
 interface ContactProps {
   t: {
     title: string;
+    name: {
+      errorMessage: string;
+      label: string;
+      placeholder: string;
+    };
+    email: {
+      errorMessage: string;
+      label: string;
+      placeholder: string;
+    };
+    message: {
+      errorMessage: string;
+      label: string;
+      placeholder: string;
+    };
+    submit: string;
+    reset: string;
   };
 }
 
@@ -17,7 +34,6 @@ export default function Contact({ t }: ContactProps) {
       id="contact"
       className="h-screen flex flex-col justify-center items-center px-4 md:px-20"
     >
-      {/* Section Title */}
       <motion.h2
         className="text-4xl md:text-5xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: 50 }}
@@ -28,7 +44,6 @@ export default function Contact({ t }: ContactProps) {
         {t.title}
       </motion.h2>
 
-      {/* Contact Form */}
       <motion.div
         className="w-full max-w-md"
         initial={{ opacity: 0, y: 50 }}
@@ -47,44 +62,45 @@ export default function Contact({ t }: ContactProps) {
         >
           <Input
             isRequired
-            errorMessage="Please enter a valid name"
-            label="Name"
+            errorMessage={t.name.errorMessage}
+            label={t.name.label}
             labelPlacement="outside"
             name="name"
-            placeholder="Enter your name"
+            autoComplete="off"
+            placeholder={t.name.placeholder}
             type="text"
           />
 
           <Input
             isRequired
-            errorMessage="Please enter a valid email"
-            label="Email"
+            errorMessage={t.email.errorMessage}
+            label={t.email.label}
             labelPlacement="outside"
             name="email"
-            placeholder="Enter your email"
+            autoComplete="off"
+            placeholder={t.email.placeholder}
             type="email"
           />
 
-          <Input
+          <Textarea
             isRequired
-            errorMessage="Please enter a message"
-            label="Message"
+            errorMessage={t.message.errorMessage}
+            label={t.message.label}
             labelPlacement="outside"
             name="message"
-            placeholder="Your message..."
-            type="textarea"
+            placeholder={t.message.placeholder}
+            autoComplete="off"
           />
 
           <div className="flex gap-4 justify-end">
             <Button color="primary" type="submit">
-              Submit
+              {t.submit}
             </Button>
             <Button type="reset" variant="flat">
-              Reset
+              {t.reset}
             </Button>
           </div>
 
-          {/* Display action */}
           {action && (
             <div className="mt-4 text-gray-600 text-sm text-center">
               Action: <code>{action}</code>
