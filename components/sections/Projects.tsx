@@ -2,6 +2,15 @@ import { motion } from "framer-motion";
 interface ProjectsProp {
   t: {
     title: string;
+    items: {
+      project1: {
+        title: string;
+        description: string;
+        features: string[];
+        technologies: string;
+        github: string;
+      };
+    };
   };
 }
 
@@ -17,6 +26,9 @@ export default function Projects({ t }: ProjectsProp) {
       >
         {t.title}
       </motion.h2>
+      <motion.div>
+        
+      </motion.div>
     </div>
   );
 }

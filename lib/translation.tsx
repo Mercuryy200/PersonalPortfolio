@@ -41,6 +41,8 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
       others: "Others",
+      framework: "Frameworks",
+      ides: "IDEs",
     },
     projects: {
       title: "Projects",
@@ -73,17 +75,17 @@ export const translations = {
       title: "Contact Me",
       name: {
         errorMessage: "Please enter a valid name",
-        label: "Full Name",
+        label: "Full Name:",
         placeholder: "Enter your full name",
       },
       email: {
         errorMessage: "Please enter a valid email",
-        label: "Email",
+        label: "Email:",
         placeholder: "Enter your email",
       },
       message: {
         errorMessage: "Please enter a message",
-        label: "Message",
+        label: "Message: ",
         placeholder: "Your message...",
       },
       submit: "Submit",
@@ -132,6 +134,8 @@ export const translations = {
       frontend: "Frontend",
       backend: "Backend",
       others: "Autres",
+      framework: "Frameworks",
+      ides: "IDEs",
     },
     projects: {
       title: "Projets",
@@ -164,17 +168,17 @@ export const translations = {
       title: "Contactez Moi",
       name: {
         errorMessage: "Veuillez entrer un nom valide ",
-        label: "Nom Complet",
+        label: "Nom Complet: ",
         placeholder: "Entez votre nom complet",
       },
       email: {
         errorMessage: "Veuillez entrer une adresse courriel valide",
-        label: "Adresse courriel",
+        label: "Adresse courriel: ",
         placeholder: "Entrez votre addresse courriel",
       },
       message: {
         errorMessage: "Veuillez enter un message",
-        label: "Message",
+        label: "Message: ",
         placeholder: "Votre message...",
       },
       submit: "Soumettre",

@@ -1,20 +1,36 @@
-export const skills = [
+export const languages = [
   "JavaScript",
-  "React",
-  "Next.js",
   "TypeScript",
   "Swift",
   "Kotlin",
   "Java",
   "CSS",
   "HTML",
-  "Node.js",
-  "Express",
-  "Git",
-  "Github",
-  "Bash",
-  "MySQL",
+  "SQL",
+  "NoSQL",
   "MongoDB",
-  "Raspberrypi",
   "Python",
+  "C#",
+  "C++",
+];
+export const frameworks = [
+  "Node.js",
+  "Next.js",
+  "Vue.js",
+  "Vuetify",
+  "ASP.NET",
+  "Express.js",
+];
+
+export const IDEs = [
+  "Visual Studio Code",
+  "Visual Studio",
+  "Unity",
+  "HeidiSQL",
+  "MongoDB",
+  "PhpStorm",
+  "Eclipse",
+  "Android Studio",
+  "Xcode",
+  "IntelliJ IDEA",
 ];

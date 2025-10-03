@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { Form, Input, Button, Textarea } from "@heroui/react";
+import { label } from "framer-motion/client";
 
 interface ContactProps {
   t: {
@@ -90,6 +91,10 @@ export default function Contact({ t }: ContactProps) {
             name="message"
             placeholder={t.message.placeholder}
             autoComplete="off"
+            classNames={{
+              label: "pl-3",
+            }}
+            className="pb-4"
           />
 
           <div className="flex gap-4 justify-end">

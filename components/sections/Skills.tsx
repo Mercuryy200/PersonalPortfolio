@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import TechCards from "../ui/TechStack";
-import { skills } from "@/lib/data";
+import { frameworks, languages } from "@/lib/data";
 
 interface SkillsProp {
   t: {
@@ -9,6 +9,8 @@ interface SkillsProp {
     frontend: string;
     backend: string;
     others: string;
+    framework: string;
+    ides: string;
   };
 }
 export default function Skills({ t }: SkillsProp) {
@@ -30,9 +32,16 @@ export default function Skills({ t }: SkillsProp) {
         transition={{ delay: 0.3, duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <div className=" flex justify-around gap-4 mt-4 flex-wrap">
-          {skills.map((skill) => (
-            <TechCards key={skill} skill={skill} />
+        <h3>{t.languages}</h3>
+        <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+          {languages.map((language) => (
+            <TechCards key={language} language={language} />
+          ))}
+        </div>
+        <h3>{t.framework}</h3>
+        <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+          {frameworks.map((framework) => (
+            <TechCards key={framework} language={framework} />
           ))}
         </div>
       </motion.div>

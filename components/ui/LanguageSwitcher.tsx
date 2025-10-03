@@ -12,8 +12,8 @@ export default function LanguageSwitcher({ language, setLanguage }: Props) {
         onClick={() => setLanguage("en")}
         className={`px-3 py-2 text-sm font-medium ${
           language === "en"
-            ? "bg-blue-900 text-white"
-            : "bg-white text-gray-700 hover:bg-gray-50"
+            ? "bg-blue-900 text-[#faf0ca]"
+            : "bg-[#faf0ca] text-gray-700 hover:bg-gray-50"
         }`}
       >
         EN
@@ -22,8 +22,8 @@ export default function LanguageSwitcher({ language, setLanguage }: Props) {
         onClick={() => setLanguage("fr")}
         className={`px-3 py-2 text-sm font-medium border-l border-gray-300 ${
           language === "fr"
-            ? "bg-blue-900 text-white"
-            : "bg-white text-gray-700 hover:bg-gray-50"
+            ? "bg-blue-900 text-[#faf0ca]"
+            : "bg-[#faf0ca] text-gray-700 hover:bg-gray-50"
         }`}
       >
         FR
