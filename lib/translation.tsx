@@ -60,7 +60,7 @@ export const translations = {
             "Easy deployment via Vercel.",
           ],
           technologies:
-            "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel",
+            "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel, Nodemailer",
           github: "https://github.com/Mercuryy200/PersonalPortfolio",
         },
       },
@@ -153,7 +153,7 @@ export const translations = {
             "Déploiement facile via Vercel.",
           ],
           technologies:
-            "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel",
+            "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel, Nodemailer",
           github: "https://github.com/Mercuryy200/PersonalPortfolio",
         },
       },
@@ -162,7 +162,7 @@ export const translations = {
       rights: "Tous droits réservés",
     },
     experience: {
-      title: "Expérience",
+      title: "Expériences",
     },
     contact: {
       title: "Contactez Moi",

@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { Form, Input, Button, Textarea } from "@heroui/react";
-import { label } from "framer-motion/client";
 
 interface ContactProps {
   t: {
@@ -53,7 +52,7 @@ export default function Contact({ t }: ContactProps) {
         viewport={{ once: true }}
       >
         <Form
-          className="flex flex-col gap-6 bg-white p-8 rounded-xl shadow-lg"
+          className="glassBackground flex flex-col gap-6 p-8 rounded-xl shadow-lg"
           onReset={() => setAction("reset")}
           onSubmit={(e) => {
             e.preventDefault();

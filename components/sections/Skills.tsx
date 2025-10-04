@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import TechCards from "../ui/TechStack";
-import { frameworks, languages } from "@/lib/data";
+import { frameworks, languages, IDEs } from "@/lib/data";
 
 interface SkillsProp {
   t: {
@@ -42,6 +42,12 @@ export default function Skills({ t }: SkillsProp) {
         <div className=" flex justify-center gap-4 mt-4 flex-wrap">
           {frameworks.map((framework) => (
             <TechCards key={framework} language={framework} />
+          ))}
+        </div>
+        <h3>IDEs</h3>
+        <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+          {IDEs.map((ide) => (
+            <TechCards key={ide} language={ide} />
           ))}
         </div>
       </motion.div>

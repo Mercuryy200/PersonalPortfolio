@@ -1,42 +1,43 @@
 {
    "type": "module",
-  "name": "personal-web",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^7.0.1",
-    "@fortawesome/free-solid-svg-icons": "^7.0.1",
-    "@fortawesome/react-fontawesome": "^3.0.2",
-    "@heroui/accordion": "^2.2.23",
-    "@heroui/divider": "^2.2.19",
-    "@heroui/react": "^2.8.4",
-    "@heroui/system": "^2.4.22",
-    "@heroui/theme": "^2.4.22",
-    "framer-motion": "^12.23.14",
-    "gray-matter": "^4.0.3",
-    "next": "^15.4.6",
-    "postcss": "^8.5.6",
-    "react": "19.1.1",
-    "react-dom": "19.1.1"
-  },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4.1.11",
-    "@types/estree": "^1.0.8",
-    "@types/json-schema": "^7.0.15",
-    "@types/json5": "^2.2.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.4",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5"
-  }
+   "name": "personal-web",
+   "version": "0.1.0",
+   "private": true,
+   "scripts": {
+      "dev": "next dev --turbopack",
+      "build": "next build",
+      "start": "next start",
+      "lint": "next lint"
+   },
+   "dependencies": {
+      "@fortawesome/free-brands-svg-icons": "^7.0.1",
+      "@fortawesome/free-solid-svg-icons": "^7.0.1",
+      "@fortawesome/react-fontawesome": "^3.0.2",
+      "@heroui/accordion": "^2.2.23",
+      "@heroui/divider": "^2.2.19",
+      "@heroui/react": "^2.8.4",
+      "@heroui/system": "^2.4.22",
+      "@heroui/theme": "^2.4.22",
+      "framer-motion": "^12.23.14",
+      "gray-matter": "^4.0.3",
+      "lucide-react": "^0.544.0",
+      "next": "^15.4.6",
+      "postcss": "^8.5.6",
+      "react": "19.1.1",
+      "react-dom": "19.1.1"
+   },
+   "devDependencies": {
+      "@eslint/eslintrc": "^3",
+      "@tailwindcss/postcss": "^4.1.11",
+      "@types/estree": "^1.0.8",
+      "@types/json-schema": "^7.0.15",
+      "@types/json5": "^2.2.0",
+      "@types/node": "^20",
+      "@types/react": "^19",
+      "@types/react-dom": "^19",
+      "eslint": "^9",
+      "eslint-config-next": "15.4.4",
+      "tailwindcss": "^4.1.11",
+      "typescript": "^5"
+   }
 }

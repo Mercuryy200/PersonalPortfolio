@@ -27,7 +27,6 @@ export const IDEs = [
   "Visual Studio",
   "Unity",
   "HeidiSQL",
-  "MongoDB",
   "PhpStorm",
   "Eclipse",
   "Android Studio",

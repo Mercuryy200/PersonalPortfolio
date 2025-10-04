@@ -17,6 +17,7 @@ export default function Experience({ t }: ExperienceProp) {
       >
         {t.title}
       </motion.h2>
+      <motion.div></motion.div>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ProjectCard from "../ui/ProjectCard";
 interface ProjectsProp {
   t: {
     title: string;
@@ -27,7 +28,9 @@ export default function Projects({ t }: ProjectsProp) {
         {t.title}
       </motion.h2>
       <motion.div>
-        
+        <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+          <ProjectCard {...t.items.project1} />
+        </div>
       </motion.div>
     </div>
   );
