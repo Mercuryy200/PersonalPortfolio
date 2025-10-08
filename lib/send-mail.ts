@@ -1,14 +1,20 @@
 "use server";
 import nodemailer from "nodemailer";
-const SMTP_SERVER_HOST = process.env.SMTP_SERVER_HOST;
+
+// Validate environment variables on module load
 const SMTP_SERVER_USERNAME = process.env.SMTP_SERVER_USERNAME;
 const SMTP_SERVER_PASSWORD = process.env.SMTP_SERVER_PASSWORD;
 const SITE_MAIL_RECIEVER = process.env.SITE_MAIL_RECIEVER;
+
+if (!SMTP_SERVER_USERNAME || !SMTP_SERVER_PASSWORD || !SITE_MAIL_RECIEVER) {
+  throw new Error(
+    "Missing required email environment variables. Please check SMTP_SERVER_USERNAME, SMTP_SERVER_PASSWORD, and SITE_MAIL_RECIEVER."
+  );
+}
+
+// Create transporter once at module level for reuse
 const transporter = nodemailer.createTransport({
   service: "gmail",
-  host: SMTP_SERVER_HOST,
-  port: 587,
-  secure: true,
   auth: {
     user: SMTP_SERVER_USERNAME,
     pass: SMTP_SERVER_PASSWORD,
@@ -17,36 +23,71 @@ const transporter = nodemailer.createTransport({
 
 export async function sendMail({
   email,
-  sendTo,
   subject,
   text,
   html,
 }: {
   email: string;
-  sendTo?: string;
   subject: string;
   text: string;
   html?: string;
 }) {
   try {
-    const isVerified = await transporter.verify();
+    // Verify connection configuration
+    await transporter.verify();
+
+    const info = await transporter.sendMail({
+      from: `"Your Website" <${SMTP_SERVER_USERNAME}>`, // Better sender format
+      replyTo: email,
+      to: SITE_MAIL_RECIEVER,
+      subject,
+      text,
+      html: html ? html : text.replace(/\n/g, "<br>"), // Fallback HTML
+    });
+
+    console.log("✅ Message sent:", info.messageId);
+    return { success: true, messageId: info.messageId };
   } catch (error) {
-    console.error(
-      "Something Went Wrong",
-      SMTP_SERVER_USERNAME,
-      SMTP_SERVER_PASSWORD,
-      error
-    );
-    return;
+    console.error("❌ Mail sending failed:", error);
+
+    // Return more detailed error information
+    if (error instanceof Error) {
+      return {
+        success: false,
+        error: error.message,
+        // Don't expose sensitive error details to client
+        details:
+          process.env.NODE_ENV === "development" ? error.stack : undefined,
+      };
+    }
+
+    return { success: false, error: "Failed to send email" };
   }
-  const info = await transporter.sendMail({
-    from: email,
-    to: sendTo || SITE_MAIL_RECIEVER,
-    subject: subject,
-    text: text,
-    html: html ? html : "",
-  });
-  console.log("Message Sent", info.messageId);
-  console.log("Mail sent to", SITE_MAIL_RECIEVER);
-  return info;
+}
+
+// Optional: Add rate limiting helper
+let emailsSentThisMinute = 0;
+let lastResetTime = Date.now();
+
+export async function sendMailWithRateLimit(
+  params: Parameters<typeof sendMail>[0]
+) {
+  const now = Date.now();
+
+  // Reset counter every minute
+  if (now - lastResetTime > 60000) {
+    emailsSentThisMinute = 0;
+    lastResetTime = now;
+  }
+
+  // Limit to 10 emails per minute (adjust as needed)
+  if (emailsSentThisMinute >= 10) {
+    return {
+      success: false,
+      error: "Rate limit exceeded. Please try again later.",
+    };
+  }
+
+  emailsSentThisMinute++;
+  return sendMail(params);
 }

@@ -13,7 +13,7 @@ export default function Hero({ t }: HeroProps) {
   return (
     <div
       id="hero"
-      className="flex flex-col justify-center h-screen items-center p-20"
+      className="flex flex-col justify-center min-h-screen items-center p-20"
     >
       <motion.h1
         className="text-5xl"

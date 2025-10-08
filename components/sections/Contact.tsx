@@ -2,7 +2,7 @@
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import React from "react";
-import { Form, Input, Button, Textarea } from "@heroui/react";
+import { Input, Button, Textarea } from "@heroui/react";
 import { sendMail } from "@/lib/send-mail";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -40,7 +40,6 @@ interface ContactProps {
 }
 
 export default function Contact({ t }: ContactProps) {
-  const [action, setAction] = React.useState<string | null>(null);
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -49,24 +48,64 @@ export default function Contact({ t }: ContactProps) {
       message: "",
     },
   });
+
   const isLoading = form.formState.isSubmitting;
+
   const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
-    const mailText = `Name: ${values.name}\n  Email: ${values.email}\nMessage: ${values.message}`;
-    const response = await sendMail({
-      email: values.email,
-      subject: "New Contact Us Form",
-      text: mailText,
-    });
-    if (response?.messageId) {
-      toast.success("Application Submitted Successfully.");
-    } else {
-      toast.error("Failed To send application.");
+    console.log("Submitting form with:", values);
+
+    // Create formatted email text
+    const mailText = `Name: ${values.name}\nEmail: ${values.email}\nMessage: ${values.message}`;
+
+    // Create HTML version for better formatting
+    const mailHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
+          New Contact Form Submission
+        </h2>
+        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
+          <p style="margin: 10px 0;"><strong>Name:</strong> ${values.name}</p>
+          <p style="margin: 10px 0;"><strong>Email:</strong> ${values.email}</p>
+        </div>
+        <div style="margin: 20px 0;">
+          <p style="margin: 10px 0;"><strong>Message:</strong></p>
+          <p style="background-color: #fff; padding: 15px; border-left: 4px solid #007bff; white-space: pre-wrap;">
+            ${values.message}
+          </p>
+        </div>
+        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+        <p style="color: #666; font-size: 12px;">
+          This email was sent from your website contact form.
+        </p>
+      </div>
+    `;
+
+    try {
+      const response = await sendMail({
+        email: values.email,
+        subject: `New Contact Form: ${values.name}`,
+        text: mailText,
+        html: mailHtml,
+      });
+
+      if (response?.success) {
+        toast.success("Message sent successfully! We'll get back to you soon.");
+        form.reset(); // Reset form after successful submission
+      } else {
+        toast.error(
+          response?.error || "Failed to send message. Please try again."
+        );
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      toast.error("An unexpected error occurred. Please try again later.");
     }
   };
+
   return (
     <div
       id="contact"
-      className="h-screen flex flex-col justify-center items-center px-4 md:px-20"
+      className="min-h-screen flex flex-col justify-center items-center px-4 md:px-20"
     >
       <motion.h2
         className="text-4xl md:text-5xl font-bold text-center mb-12"
@@ -85,62 +124,54 @@ export default function Contact({ t }: ContactProps) {
         transition={{ delay: 0.3, duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <Form
+        <form
           className="glassBackground flex flex-col gap-6 p-8 rounded-xl shadow-lg"
-          onReset={() => setAction("reset")}
           onSubmit={form.handleSubmit(onSubmit)}
         >
           <Input
             isRequired
-            errorMessage={t.name.errorMessage}
+            isInvalid={!!form.formState.errors.name}
+            errorMessage={form.formState.errors.name?.message}
             label={t.name.label}
             labelPlacement="outside"
-            name="name"
-            autoComplete="off"
             placeholder={t.name.placeholder}
             type="text"
+            {...form.register("name")}
           />
 
           <Input
             isRequired
-            errorMessage={t.email.errorMessage}
+            isInvalid={!!form.formState.errors.email}
+            errorMessage={form.formState.errors.email?.message}
             label={t.email.label}
             labelPlacement="outside"
-            name="email"
-            autoComplete="off"
             placeholder={t.email.placeholder}
             type="email"
+            {...form.register("email")}
           />
 
           <Textarea
             isRequired
-            errorMessage={t.message.errorMessage}
+            isInvalid={!!form.formState.errors.message}
+            errorMessage={form.formState.errors.message?.message}
             label={t.message.label}
             labelPlacement="outside"
-            name="message"
             placeholder={t.message.placeholder}
-            autoComplete="off"
-            classNames={{
-              label: "pl-3",
-            }}
+            classNames={{ label: "pl-3" }}
             className="pb-4"
+            {...form.register("message")}
           />
 
           <div className="flex gap-4 justify-end">
-            <Button color="primary" type="submit">
-              {isLoading ? "Sending....." : t.submit}
+            <Button color="primary" type="submit" disabled={isLoading}>
+              {isLoading ? "Sending..." : t.submit}
             </Button>
-            <Button type="reset" variant="flat">
+
+            <Button type="button" variant="flat" onPress={() => form.reset()}>
               {t.reset}
             </Button>
           </div>
-
-          {action && (
-            <div className="mt-4 text-gray-600 text-sm text-center">
-              Action: <code>{action}</code>
-            </div>
-          )}
-        </Form>
+        </form>
       </motion.div>
     </div>
   );

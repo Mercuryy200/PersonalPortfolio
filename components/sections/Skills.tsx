@@ -15,7 +15,7 @@ interface SkillsProp {
 }
 export default function Skills({ t }: SkillsProp) {
   return (
-    <div id="skills" className=" h-screen flex flex-col justify-center">
+    <div id="skills" className=" h-min-screen flex flex-col justify-center">
       <motion.h2
         className="text-3xl text-center mt-20 mb-10"
         initial={{ opacity: 0, y: 50 }}

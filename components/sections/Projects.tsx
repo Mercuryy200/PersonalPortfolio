@@ -17,7 +17,11 @@ interface ProjectsProp {
 
 export default function Projects({ t }: ProjectsProp) {
   return (
-    <div id="projects" className=" h-screen flex flex-col justify-center">
+    <div
+      id="projects"
+      className=" min-h-screen flex flex-col justify-center p-4
+      "
+    >
       <motion.h2
         className="text-3xl text-center mt-20 mb-10"
         initial={{ opacity: 0, y: 50 }}

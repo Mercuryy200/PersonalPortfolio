@@ -26,7 +26,7 @@ interface AboutProps {
 
 export default function About({ t }: AboutProps) {
   return (
-    <div id="about" className=" h-screen flex flex-col justify-center">
+    <div id="about" className="min-h-screen flex flex-col justify-center">
       <motion.h2
         className="text-3xl text-center mt-20 mb-10"
         initial={{ opacity: 0, y: 50 }}
@@ -37,7 +37,7 @@ export default function About({ t }: AboutProps) {
         {t.title}
       </motion.h2>
       <motion.div
-        className="text-lg mx-20 mb-20 flex flex-col "
+        className="text-lg  flex flex-col "
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
