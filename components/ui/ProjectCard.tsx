@@ -6,6 +6,8 @@ import {
   Button,
   Divider,
 } from "@heroui/react";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type ProjectCardProps = {
   title: string;
@@ -45,8 +47,10 @@ export default function ProjectCard({
           rel="noopener noreferrer"
           color="primary"
           variant="flat"
+          className="rounded-md bg-coffeBean text-almond"
         >
           GitHub
+          <FontAwesomeIcon icon={faGithub} />
         </Button>
       </CardFooter>
     </Card>

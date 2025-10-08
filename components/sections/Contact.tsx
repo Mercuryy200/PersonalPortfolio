@@ -53,11 +53,7 @@ export default function Contact({ t }: ContactProps) {
 
   const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
     console.log("Submitting form with:", values);
-
-    // Create formatted email text
     const mailText = `Name: ${values.name}\nEmail: ${values.email}\nMessage: ${values.message}`;
-
-    // Create HTML version for better formatting
     const mailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
@@ -90,7 +86,7 @@ export default function Contact({ t }: ContactProps) {
 
       if (response?.success) {
         toast.success("Message sent successfully! We'll get back to you soon.");
-        form.reset(); // Reset form after successful submission
+        form.reset();
       } else {
         toast.error(
           response?.error || "Failed to send message. Please try again."
@@ -118,7 +114,7 @@ export default function Contact({ t }: ContactProps) {
       </motion.h2>
 
       <motion.div
-        className="w-full max-w-md"
+        className="w-full max-w-md glassBackground"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
@@ -163,11 +159,21 @@ export default function Contact({ t }: ContactProps) {
           />
 
           <div className="flex gap-4 justify-end">
-            <Button color="primary" type="submit" disabled={isLoading}>
+            <Button
+              color="primary"
+              type="submit"
+              className="bg-coffeBean text-almond rounded-xl w-1/2 p-2"
+              disabled={isLoading}
+            >
               {isLoading ? "Sending..." : t.submit}
             </Button>
 
-            <Button type="button" variant="flat" onPress={() => form.reset()}>
+            <Button
+              type="button"
+              className="bg-coffeBean text-almond rounded-xl w-1/2 p-2"
+              variant="flat"
+              onPress={() => form.reset()}
+            >
               {t.reset}
             </Button>
           </div>

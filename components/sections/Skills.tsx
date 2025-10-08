@@ -15,7 +15,7 @@ interface SkillsProp {
 }
 export default function Skills({ t }: SkillsProp) {
   return (
-    <div id="skills" className=" h-min-screen flex flex-col justify-center">
+    <div id="skills" className=" min-h-screen flex flex-col justify-center">
       <motion.h2
         className="text-3xl text-center mt-20 mb-10"
         initial={{ opacity: 0, y: 50 }}
@@ -26,29 +26,35 @@ export default function Skills({ t }: SkillsProp) {
         {t.title}
       </motion.h2>
       <motion.div
-        className="text-lg mx-20 mb-20  flex flex-col  justify-center items-center "
+        className="text-lg mx-20 mb-20  flex flex-row justify-between items-center "
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h3>{t.languages}</h3>
-        <div className=" flex justify-center gap-4 mt-4 flex-wrap">
-          {languages.map((language) => (
-            <TechCards key={language} language={language} />
-          ))}
+        <div className="text-center">
+          <h3>{t.languages} </h3>
+          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+            {languages.map((language) => (
+              <TechCards key={language} language={language} />
+            ))}
+          </div>
         </div>
-        <h3>{t.framework}</h3>
-        <div className=" flex justify-center gap-4 mt-4 flex-wrap">
-          {frameworks.map((framework) => (
-            <TechCards key={framework} language={framework} />
-          ))}
+        <div className="text-center">
+          <h3>{t.framework}</h3>
+          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+            {frameworks.map((framework) => (
+              <TechCards key={framework} language={framework} />
+            ))}
+          </div>
         </div>
-        <h3>IDEs</h3>
-        <div className=" flex justify-center gap-4 mt-4 flex-wrap">
-          {IDEs.map((ide) => (
-            <TechCards key={ide} language={ide} />
-          ))}
+        <div className="text-center">
+          <h3>IDEs</h3>
+          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+            {IDEs.map((ide) => (
+              <TechCards key={ide} language={ide} />
+            ))}
+          </div>
         </div>
       </motion.div>
     </div>
