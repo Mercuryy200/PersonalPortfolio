@@ -1,7 +1,20 @@
 "use client";
+import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import React from "react";
 import { Form, Input, Button, Textarea } from "@heroui/react";
+import { sendMail } from "@/lib/send-mail";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner";
+
+const contactFormSchema = z.object({
+  name: z.string().min(2, { message: "Please Enter Your Name" }),
+  email: z.string().email({ message: "Please Enter a Valid Email Address" }),
+  message: z.string().min(10, {
+    message: "Please make sure your message is at least 10 characters long.",
+  }),
+});
 
 interface ContactProps {
   t: {
@@ -28,7 +41,28 @@ interface ContactProps {
 
 export default function Contact({ t }: ContactProps) {
   const [action, setAction] = React.useState<string | null>(null);
-
+  const form = useForm<z.infer<typeof contactFormSchema>>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+  const isLoading = form.formState.isSubmitting;
+  const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
+    const mailText = `Name: ${values.name}\n  Email: ${values.email}\nMessage: ${values.message}`;
+    const response = await sendMail({
+      email: values.email,
+      subject: "New Contact Us Form",
+      text: mailText,
+    });
+    if (response?.messageId) {
+      toast.success("Application Submitted Successfully.");
+    } else {
+      toast.error("Failed To send application.");
+    }
+  };
   return (
     <div
       id="contact"
@@ -54,11 +88,7 @@ export default function Contact({ t }: ContactProps) {
         <Form
           className="glassBackground flex flex-col gap-6 p-8 rounded-xl shadow-lg"
           onReset={() => setAction("reset")}
-          onSubmit={(e) => {
-            e.preventDefault();
-            const data = Object.fromEntries(new FormData(e.currentTarget));
-            setAction(`submit ${JSON.stringify(data)}`);
-          }}
+          onSubmit={form.handleSubmit(onSubmit)}
         >
           <Input
             isRequired
@@ -98,7 +128,7 @@ export default function Contact({ t }: ContactProps) {
 
           <div className="flex gap-4 justify-end">
             <Button color="primary" type="submit">
-              {t.submit}
+              {isLoading ? "Sending....." : t.submit}
             </Button>
             <Button type="reset" variant="flat">
               {t.reset}
