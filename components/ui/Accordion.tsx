@@ -24,7 +24,7 @@ interface AccordionProps {
 export default function AboutMeAccordion({ t }: AccordionProps) {
   const itemClasses = {
     base: "py-0 w-full",
-    title: "font-normal text-xl font-bold text-blue-900 text-left",
+    title: "font-normal text-xl font-bold  text-left",
     trigger: "px-2 py-0 data-[hover=true]:bg-default-100 rounded-lg h-14 flex ",
     indicator: "text-medium",
     content: "text-small px-2",

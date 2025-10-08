@@ -7,9 +7,9 @@ export default function TechCards({ language }: TechCardsProps) {
   return (
     <div className="flex gap-4">
       <Chip
-        size="md"
+        size="sm"
         variant="shadow"
-        className="bg-blue-900 rounded-xl p-3 text-bold text-white hover:scale-105 transition-transform duration-300"
+        className="bg-coffeBean rounded-xl p-3 text-bold text-white hover:scale-105 transition-transform duration-300"
       >
         {language}
       </Chip>

@@ -22,7 +22,10 @@ export default function Hero({ t }: HeroProps) {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        {t.intro} <span className="text-blue-900 font-bold">Rima Nafougui</span>
+        {t.intro}{" "}
+        <span className="text-coffeBean font-bold font-serif">
+          Rima Nafougui
+        </span>
       </motion.h1>
 
       <motion.h2
@@ -38,7 +41,7 @@ export default function Hero({ t }: HeroProps) {
             href="https://github.com/Mercuryy200"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-800  hover:scale-110 transition-transform duration-300"
+            className=" hover:text-gray-800  hover:scale-110 transition-transform duration-300"
           >
             <FontAwesomeIcon icon={faGithub} size="2x" />
           </Link>
@@ -46,7 +49,7 @@ export default function Hero({ t }: HeroProps) {
             href="https://www.linkedin.com/in/rima-nafougui-b0434b295"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-600 hover:text-gray-800 hover:scale-110 transition-transform duration-300"
+            className=" hover:text-gray-800 hover:scale-110 transition-transform duration-300"
           >
             <FontAwesomeIcon icon={faLinkedin} size="2x" />
           </Link>
