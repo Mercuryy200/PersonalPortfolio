@@ -10,7 +10,7 @@ interface Props {
 }
 export default function Header({ t, language, setLanguage }: Props) {
   return (
-    <div className="w-min-full flex items-center justify-between fixed top-0 px-8 p-5 bg-[#faf0ca]">
+    <div className="w-full flex items-center justify-between fixed top-0 px-8 p-5 bg-[#faf0ca]">
       <Link href="/">
         <Image
           src="/images/Letter_R.png"
