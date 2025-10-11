@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-almond: #efe1d5;
-  --color-coffeBean: #2e0d14;
+  --color-almond: #BDD7De;
+  --color-coffeBean: #583722;
 }
 :root {
   --background: var(--color-almond);
