@@ -1,1 +1,1 @@
-![Alt text](image-url "public/images/PersonalPortfolio.png")
+![Alt text](image-url "/public/images/PersonalPortfolio.png")
