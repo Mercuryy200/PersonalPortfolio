@@ -73,6 +73,7 @@ export const translations = {
 experience: {
   title: "Experience",
   viewMore: "Downlaod Resume",
+  fileName: "NafouguiRima_EN.pdf",
   items: [
     {
       position: "Tutor in Software Development",
@@ -180,7 +181,8 @@ experience: {
     },
     experience: {
      title: "Expériences",
-     viewMore: "Télcharger le CV",
+     viewMore: "Télécharger le CV",
+     fileName: "NafouguiRima_FR.pdf",
      items: [
     {
       position: "Tutrice en développement logiciel",

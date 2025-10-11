@@ -33,14 +33,6 @@ export default function Info({ viewMore, items }: InfoProps) {
           </div>
         ))}
       </CardBody>
-      <CardFooter className="p-4">
-        <Button
-          color="primary"
-          className="bg-coffeBean text-almond rounded-xl w-full p-2 font-semibold"
-        >
-          {viewMore}
-        </Button>
-      </CardFooter>
     </Card>
   );
 }

@@ -28,7 +28,7 @@ export default function Home() {
         <Divider />
         <Projects t={t.projects} />
         <Divider />
-        <Experience t={t.experience} />
+        <Experience t={t.experience} language={language} />
         <Divider />
         <Skills t={t.skills} />
         <Divider />

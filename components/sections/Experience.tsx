@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import Info from "@/components/ui/Info";
+import ResumeDownload from "@/components/ui/ResumeDownload";
+import { Language } from "@/lib/translation";
 
 interface ExperienceProp {
   t: {
@@ -12,9 +14,10 @@ interface ExperienceProp {
       company: string;
     }>;
   };
+  language: Language;
 }
 
-export default function Experience({ t }: ExperienceProp) {
+export default function Experience({ t, language }: ExperienceProp) {
   return (
     <div id="experience" className="min-h-screen flex flex-col justify-center">
       <motion.h2
@@ -32,8 +35,9 @@ export default function Experience({ t }: ExperienceProp) {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <div className="flex flex-row ">
+        <div className="flex flex-col items-center gap-6">
           <Info viewMore={t.viewMore} items={t.items} />
+          <ResumeDownload language={language} />
         </div>
       </motion.div>
     </div>
