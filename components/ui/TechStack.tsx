@@ -8,7 +8,7 @@ export default function TechCards({ language }: TechCardsProps) {
     <Chip
       size="sm"
       variant="shadow"
-      className="bg-coffeBean rounded-xl p-2 text-bold text-white hover:scale-105 transition-transform duration-300"
+      className="bg-coffeBean text-sm rounded-xl p-5 text-bold text-white hover:scale-105 transition-transform duration-300"
     >
       {language}
     </Chip>

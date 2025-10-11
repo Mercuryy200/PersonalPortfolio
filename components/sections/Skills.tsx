@@ -26,7 +26,7 @@ export default function Skills({ t }: SkillsProp) {
         {t.title}
       </motion.h2>
       <motion.div
-        className="text-lg mx-20 mb-20  flex flex-row justify-between items-center "
+        className="text-lg mx-5 lg:mx-20 mb-20  flex flex-col flex-wrap justify-between items-center "
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6 }}

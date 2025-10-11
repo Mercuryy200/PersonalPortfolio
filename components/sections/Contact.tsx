@@ -129,7 +129,7 @@ export default function Contact({ t }: ContactProps) {
             isInvalid={!!form.formState.errors.name}
             errorMessage={form.formState.errors.name?.message}
             label={t.name.label}
-            labelPlacement="outside"
+            labelPlacement="outside-top"
             placeholder={t.name.placeholder}
             type="text"
             {...form.register("name")}
@@ -141,7 +141,7 @@ export default function Contact({ t }: ContactProps) {
             isInvalid={!!form.formState.errors.email}
             errorMessage={form.formState.errors.email?.message}
             label={t.email.label}
-            labelPlacement="outside"
+            labelPlacement="outside-top"
             placeholder={t.email.placeholder}
             type="email"
             {...form.register("email")}
@@ -155,7 +155,6 @@ export default function Contact({ t }: ContactProps) {
             label={t.message.label}
             labelPlacement="outside"
             placeholder={t.message.placeholder}
-            classNames={{ label: "pl-3" }}
             className="pb-4"
             {...form.register("message")}
           />
