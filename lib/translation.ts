@@ -1,3 +1,5 @@
+import { vi } from "zod/v4/locales";
+
 export const translations = {
   en: {
     nav: {
@@ -68,9 +70,24 @@ export const translations = {
     footer: {
       rights: "All rights reserved",
     },
-    experience: {
-      title: "Experience",
+experience: {
+  title: "Experience",
+  viewMore: "Downlaod Resume",
+  items: [
+    {
+      position: "Tutor in Software Development",
+      company: "Cegep Ahuntsic/Freelance",
+      duration: "May 2025 - Present",
+      description: "Assist college and university students in programming concepts in SQL, Java, Python, JavaScript, Kotlin, Swift and more. \nProvide guidance on code debugging and algorithm problem-solving. \nCreate additional learning materials to enhance student understanding"
     },
+    {
+      position: "Tutor in Mathematics",
+      company: "Cegep Ahuntsic/Freelance",
+      duration: "August 2024 - Present",
+      description: "Assist 5 college students in mathematics for computer science courses, including linear algebra and discrete mathematics. \nProvide guidance on solving computer-related problems (e.g., ray tracing calculations). \nCreate additional learning materials to enhance student understanding"
+    },
+  ],
+},
     contact: {
       title: "Contact Me",
       name: {
@@ -162,7 +179,24 @@ export const translations = {
       rights: "Tous droits réservés",
     },
     experience: {
-      title: "Expériences",
+     title: "Expériences",
+     viewMore: "Télcharger le CV",
+     items: [
+    {
+      position: "Tutrice en développement logiciel",
+      company: "Collège Ahuntsic / Travail Autonome",
+      duration: "Mai 2025 - Présent",
+      description:
+        "Assister les étudiants collégiaux et universitaires dans les concepts de programmation en SQL, Java, Python, JavaScript, Kotlin, Swift et plus encore. \nFournir des conseils sur le débogage de code et la résolution de problèmes algorithmiques. \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
+    },
+    {
+      position: "Tuteur en mathématiques",
+      company: "Collège Ahuntsic / Travail Autonome",
+      duration: "Août 2024 - Présent",
+      description:
+        "Assister 5 étudiants collégiaux en mathématiques dans les cours destinés aux étudiants en informatique, incluant l'algèbre linéaire et les mathématiques discrètes. \nFournir des conseils sur la résolution de problèmes liés à l'informatique (par exemple, calculs de ray tracing). \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
+    },
+  ],
     },
     contact: {
       title: "Contactez Moi",

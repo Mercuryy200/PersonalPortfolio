@@ -133,6 +133,7 @@ export default function Contact({ t }: ContactProps) {
             placeholder={t.name.placeholder}
             type="text"
             {...form.register("name")}
+            autoComplete="off"
           />
 
           <Input
@@ -144,6 +145,7 @@ export default function Contact({ t }: ContactProps) {
             placeholder={t.email.placeholder}
             type="email"
             {...form.register("email")}
+            autoComplete="off"
           />
 
           <Textarea
