@@ -1,1 +1,1 @@
-![Preview of my app](./public/images/preview.png)
+![Preview of my app](https://rimanafougui.vercel.app/images/PersonalPortfolio.png)
