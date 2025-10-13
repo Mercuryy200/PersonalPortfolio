@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
 import { Language, Translation } from "@/lib/translation";
@@ -28,16 +27,10 @@ export default function Header({ t, language, setLanguage }: Props) {
 
   return (
     <nav className="fixed top-0 w-full bg-almond z-50">
-      <div className="mx-auto  sm:px-6 ">
+      <div className=" sm:p-4 ">
         <div className="relative flex h-20 w-full items-center justify-between">
           <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/images/Letter_R.png"
-              alt="Letter R"
-              width={75}
-              height={75}
-              className="h-16 w-auto"
-            />
+            <p className="text-4xl lg:text-7xl  font-bold p-4">R</p>
           </Link>
 
           <div className="hidden lg:flex lg:space-x-8">
@@ -45,7 +38,7 @@ export default function Header({ t, language, setLanguage }: Props) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg text-gray-700 hover:text-coffeBean hover:scale-110 transition-all duration-300 font-medium"
+                className="text-lg hover:text-amber-50 hover:scale-110 transition-all duration-300 font-medium"
               >
                 {item.name}
               </Link>

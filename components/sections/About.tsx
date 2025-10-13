@@ -28,7 +28,7 @@ export default function About({ t }: AboutProps) {
   return (
     <div id="about" className="min-h-screen flex flex-col justify-center">
       <motion.h2
-        className="text-3xl text-center mt-20 mb-10"
+        className="text-4xl md:text-5xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

@@ -8,7 +8,6 @@ export const languages = [
   "HTML",
   "SQL",
   "NoSQL",
-  "MongoDB",
   "Python",
   "C#",
   "C++",

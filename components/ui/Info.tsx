@@ -21,7 +21,7 @@ type InfoProps = {
 
 export default function Info({ viewMore, items }: InfoProps) {
   return (
-    <Card className="max-w-md mx-auto my-10 bg-almond text-coffeBean shadow-lg rounded-2xl p-4 glassBackground">
+    <Card className="max-w-md mx-auto my-10 shadow-lg rounded-2xl p-4 glassBackground">
       <CardBody className="space-y-6">
         {items.map((item, index) => (
           <div key={index}>
