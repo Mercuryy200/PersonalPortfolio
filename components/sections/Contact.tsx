@@ -10,7 +10,7 @@ import { toast } from "sonner";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, { message: "Please Enter Your Name" }),
-  email: z.string().email({ message: "Please Enter a Valid Email Address" }),
+  email: z.email({ message: "Please Enter a Valid Email Address" }),
   message: z.string().min(10, {
     message: "Please make sure your message is at least 10 characters long.",
   }),

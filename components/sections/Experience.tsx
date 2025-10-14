@@ -21,7 +21,7 @@ export default function Experience({ t, language }: ExperienceProp) {
   return (
     <div
       id="experience"
-      className="min-h-screen flex flex-col justify-center p-4"
+      className="min-h-screen flex flex-col justify-center p-4 "
     >
       <motion.h2
         className="text-4xl md:text-5xl font-bold text-center mb-12"
