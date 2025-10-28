@@ -1,5 +1,3 @@
-import { vi } from "zod/v4/locales";
-
 export const translations = {
   en: {
     nav: {
@@ -64,31 +62,53 @@ export const translations = {
           technologies:
             "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel, Nodemailer",
           github: "https://github.com/Mercuryy200/PersonalPortfolio",
+          url: "https://rimanafougui.vercel.app",
+        },
+        project2: {
+          title: "Smart Closet Manager",
+          description:
+            "A full-stack wardrobe management application built with Next.js and Prisma. It allows users to digitally organize their clothing items, track purchases, and plan outfits. Features secure authentication, image storage, and a responsive interface for managing your entire wardrobe in one place.",
+          features: [
+            "Secure user authentication with NextAuth.js (GitHub & Credentials).",
+            "Full CRUD operations for clothing items with real-time updates.",
+            "Multi-select categorization (colors, occasions, seasons).",
+            "Image URL support for visual wardrobe representation.",
+            "Price tracking and purchase history.",
+            "Responsive card-based layout with Hero UI components.",
+            "PostgreSQL database with Prisma ORM for data persistence.",
+            "Protected routes with middleware authentication.",
+          ],
+          technologies:
+            "Next.js 15, TypeScript, Prisma ORM, PostgreSQL, NextAuth.js, Hero UI, Tailwind CSS, bcrypt",
+          github: "https://github.com/Mercuryy200/ClosetOrganizer",
+          url: "https://closet-organizer-rima-nafougui.vercel.app",
         },
       },
     },
     footer: {
       rights: "All rights reserved",
     },
-experience: {
-  title: "Experience",
-  viewMore: "Downlaod Resume",
-  fileName: "NafouguiRima_EN.pdf",
-  items: [
-    {
-      position: "Tutor in Software Development",
-      company: "Cegep Ahuntsic/Freelance",
-      duration: "May 2025 - Present",
-      description: "Assist college and university students in programming concepts in SQL, Java, Python, JavaScript, Kotlin, Swift and more. \nProvide guidance on code debugging and algorithm problem-solving. \nCreate additional learning materials to enhance student understanding"
+    experience: {
+      title: "Experience",
+      viewMore: "Downlaod Resume",
+      fileName: "NafouguiRima_EN.pdf",
+      items: [
+        {
+          position: "Tutor in Software Development",
+          company: "Cegep Ahuntsic/Freelance",
+          duration: "May 2025 - Present",
+          description:
+            "Assist college and university students in programming concepts in SQL, Java, Python, JavaScript, Kotlin, Swift and more. \nProvide guidance on code debugging and algorithm problem-solving. \nCreate additional learning materials to enhance student understanding",
+        },
+        {
+          position: "Tutor in Mathematics",
+          company: "Cegep Ahuntsic/Freelance",
+          duration: "August 2024 - Present",
+          description:
+            "Assist 5 college students in mathematics for computer science courses, including linear algebra and discrete mathematics. \nProvide guidance on solving computer-related problems (e.g., ray tracing calculations). \nCreate additional learning materials to enhance student understanding",
+        },
+      ],
     },
-    {
-      position: "Tutor in Mathematics",
-      company: "Cegep Ahuntsic/Freelance",
-      duration: "August 2024 - Present",
-      description: "Assist 5 college students in mathematics for computer science courses, including linear algebra and discrete mathematics. \nProvide guidance on solving computer-related problems (e.g., ray tracing calculations). \nCreate additional learning materials to enhance student understanding"
-    },
-  ],
-},
     contact: {
       title: "Contact Me",
       name: {
@@ -173,6 +193,26 @@ experience: {
           technologies:
             "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel, Nodemailer",
           github: "https://github.com/Mercuryy200/PersonalPortfolio",
+          url: "https://rimanafougui.vercel.app",
+        },
+        project2: {
+          title: "Gestionnaire de Garde-robe Intelligent",
+          description:
+            "Une application full-stack de gestion de garde-robe construite avec Next.js et Prisma. Elle permet aux utilisateurs d'organiser numériquement leurs vêtements, de suivre leurs achats et de planifier leurs tenues. Comprend une authentification sécurisée, le stockage d'images et une interface responsive pour gérer toute votre garde-robe en un seul endroit.",
+          features: [
+            "Authentification sécurisée avec NextAuth.js (GitHub et identifiants).",
+            "Opérations CRUD complètes pour les vêtements avec mises à jour en temps réel.",
+            "Catégorisation à sélection multiple (couleurs, occasions, saisons).",
+            "Support d'URL d'images pour une représentation visuelle de la garde-robe.",
+            "Suivi des prix et historique des achats.",
+            "Interface responsive basée sur des cartes avec les composants Hero UI.",
+            "Base de données PostgreSQL avec Prisma ORM pour la persistance des données.",
+            "Routes protégées avec middleware d'authentification.",
+          ],
+          technologies:
+            "Next.js 15, TypeScript, Prisma ORM, PostgreSQL, NextAuth.js, Hero UI, Tailwind CSS, bcrypt",
+          github: "https://github.com/Mercuryy200/ClosetOrganizer",
+          url: "https://closet-organizer-rima-nafougui.vercel.app",
         },
       },
     },
@@ -180,25 +220,25 @@ experience: {
       rights: "Tous droits réservés",
     },
     experience: {
-     title: "Expériences",
-     viewMore: "Télécharger le CV",
-     fileName: "NafouguiRima_FR.pdf",
-     items: [
-    {
-      position: "Tutrice en développement logiciel",
-      company: "Collège Ahuntsic / Travail Autonome",
-      duration: "Mai 2025 - Présent",
-      description:
-        "Assister les étudiants collégiaux et universitaires dans les concepts de programmation en SQL, Java, Python, JavaScript, Kotlin, Swift et plus encore. \nFournir des conseils sur le débogage de code et la résolution de problèmes algorithmiques. \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
-    },
-    {
-      position: "Tuteur en mathématiques",
-      company: "Collège Ahuntsic / Travail Autonome",
-      duration: "Août 2024 - Présent",
-      description:
-        "Assister 5 étudiants collégiaux en mathématiques dans les cours destinés aux étudiants en informatique, incluant l'algèbre linéaire et les mathématiques discrètes. \nFournir des conseils sur la résolution de problèmes liés à l'informatique (par exemple, calculs de ray tracing). \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
-    },
-  ],
+      title: "Expériences",
+      viewMore: "Télécharger le CV",
+      fileName: "NafouguiRima_FR.pdf",
+      items: [
+        {
+          position: "Tutrice en développement logiciel",
+          company: "Collège Ahuntsic / Travail Autonome",
+          duration: "Mai 2025 - Présent",
+          description:
+            "Assister les étudiants collégiaux et universitaires dans les concepts de programmation en SQL, Java, Python, JavaScript, Kotlin, Swift et plus encore. \nFournir des conseils sur le débogage de code et la résolution de problèmes algorithmiques. \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
+        },
+        {
+          position: "Tuteur en mathématiques",
+          company: "Collège Ahuntsic / Travail Autonome",
+          duration: "Août 2024 - Présent",
+          description:
+            "Assister 5 étudiants collégiaux en mathématiques dans les cours destinés aux étudiants en informatique, incluant l'algèbre linéaire et les mathématiques discrètes. \nFournir des conseils sur la résolution de problèmes liés à l'informatique (par exemple, calculs de ray tracing). \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
+        },
+      ],
     },
     contact: {
       title: "Contactez Moi",

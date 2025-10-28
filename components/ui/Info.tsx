@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Button,
-  Divider,
-} from "@heroui/react";
+import { Card, CardBody, Divider } from "@heroui/react";
 
 type ExperienceItem = {
   position: string;

@@ -15,6 +15,7 @@ type ProjectCardProps = {
   features: string[];
   technologies: string;
   github: string;
+  url: string;
 };
 
 export default function ProjectCard({
@@ -23,9 +24,14 @@ export default function ProjectCard({
   features,
   technologies,
   github,
+  url,
 }: ProjectCardProps) {
   return (
-    <Card className="glassBackground py-4 max-w-md shadow-lg rounded-2xl border border-default-200">
+    <Card
+      className="glassBackground py-4 max-w-md shadow-lg rounded-2xl border border-default-200"
+      isPressable
+      onPress={() => window.open(url, "_blank")}
+    >
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <h4 className="font-bold text-large mt-1">{title}</h4>
         <small className="text-default-500 mt-1">{technologies}</small>

@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import TechCards from "../ui/TechStack";
 import { frameworks, languages, IDEs } from "@/lib/data";
-import Search from "../ui/Search";
 
 interface SkillsProp {
   t: {

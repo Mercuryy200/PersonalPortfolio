@@ -10,6 +10,15 @@ interface ProjectsProp {
         features: string[];
         technologies: string;
         github: string;
+        url: string;
+      };
+      project2: {
+        title: string;
+        description: string;
+        features: string[];
+        technologies: string;
+        github: string;
+        url: string;
       };
     };
   };
@@ -34,6 +43,7 @@ export default function Projects({ t }: ProjectsProp) {
       <motion.div>
         <div className=" flex justify-center gap-4 mt-4 flex-wrap">
           <ProjectCard {...t.items.project1} />
+          <ProjectCard {...t.items.project2} />
         </div>
       </motion.div>
     </div>
