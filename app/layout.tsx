@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     default: "Rima Nafougui",
   },
 };
+
 const montserrat = Montserrat({
   subsets: ["latin"],
 });

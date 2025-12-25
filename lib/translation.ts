@@ -67,7 +67,7 @@ export const translations = {
         project2: {
           title: "Smart Closet Manager",
           description:
-            "A full-stack wardrobe management application built with Next.js and Prisma. It allows users to digitally organize their clothing items, track purchases, and plan outfits. Features secure authentication, image storage, and a responsive interface for managing your entire wardrobe in one place.",
+            "A full-stack wardrobe management application built with Next.js and Supabase. It allows users to digitally organize their clothing items, track purchases, and plan outfits. Features secure authentication, image storage, and a responsive interface for managing your entire wardrobe in one place.",
           features: [
             "Secure user authentication with NextAuth.js (GitHub & Credentials).",
             "Full CRUD operations for clothing items with real-time updates.",
@@ -75,13 +75,34 @@ export const translations = {
             "Image URL support for visual wardrobe representation.",
             "Price tracking and purchase history.",
             "Responsive card-based layout with Hero UI components.",
-            "PostgreSQL database with Prisma ORM for data persistence.",
-            "Protected routes with middleware authentication.",
+            "PostgreSQL database with Supabase",
+            "Protected routes with middleware authentication with NextAuth.js.",
           ],
           technologies:
             "Next.js 15, TypeScript, Prisma ORM, PostgreSQL, NextAuth.js, Hero UI, Tailwind CSS, bcrypt",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
           url: "https://closet-organizer-rima-nafougui.vercel.app",
+        },
+        project3: {
+          title: "Fruit Basket Game",
+          description:
+            "An interactive Unity game where players catch falling food items in a pot while avoiding bombs. Built with C# and Unity Asset Store assets, the game features progressive difficulty scaling, smooth animations, and polished UI/UX. Implements comprehensive testing practices including unit tests, play mode tests, and configuration tests to ensure code quality and reliability.",
+          features: [
+            "Dynamic spawning system with falling food items and bombs.",
+            "Progressive difficulty that increases as the timer counts down.",
+            "Score tracking system with real-time UI updates.",
+            "Game state management with start, play, and restart functionality.",
+            "Collision detection using Rigidbody physics.",
+            "Coroutines for timed events and asynchronous operations.",
+            "Comprehensive testing suite (Unit Tests, Play Mode Tests, Configuration Tests).",
+            "Polished UI with TextMesh Pro, sound effects, and VFX.",
+            "Custom gravity manipulation for realistic falling mechanics.",
+            "Prefab-based architecture for efficient object instantiation.",
+          ],
+          technologies:
+            "Unity, C#, Unity Asset Store, TextMesh Pro, Rigidbody Physics, Coroutines, Unity Test Framework",
+          github: "https://github.com/Mercuryy200/FruitBasket",
+          url: "",
         },
       },
     },
@@ -213,6 +234,27 @@ export const translations = {
             "Next.js 15, TypeScript, Prisma ORM, PostgreSQL, NextAuth.js, Hero UI, Tailwind CSS, bcrypt",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
           url: "https://closet-organizer-rima-nafougui.vercel.app",
+        },
+        project3: {
+          title: "Jeu Panier de Fruits",
+          description:
+            "Un jeu Unity interactif où les joueurs attrapent des aliments qui tombent dans un pot tout en évitant les bombes. Construit avec C# et des assets du Unity Asset Store, le jeu propose une difficulté progressive, des animations fluides et une interface utilisateur soignée. Implémente des pratiques de tests complètes incluant des tests unitaires, des tests en mode lecture et des tests de configuration pour assurer la qualité et la fiabilité du code.",
+          features: [
+            "Système de génération dynamique avec aliments tombants et bombes.",
+            "Difficulté progressive qui augmente à mesure que le minuteur diminue.",
+            "Système de suivi des points avec mises à jour UI en temps réel.",
+            "Gestion de l'état du jeu avec fonctionnalités de démarrage et redémarrage.",
+            "Détection de collision utilisant la physique Rigidbody.",
+            "Coroutines pour les événements temporisés et opérations asynchrones.",
+            "Suite de tests complète (Tests Unitaires, Tests en Mode Lecture, Tests de Configuration).",
+            "Interface utilisateur soignée avec TextMesh Pro, effets sonores et VFX.",
+            "Manipulation personnalisée de la gravité pour des mécaniques de chute réalistes.",
+            "Architecture basée sur des prefabs pour une instantiation d'objets efficace.",
+          ],
+          technologies:
+            "Unity, C#, Unity Asset Store, TextMesh Pro, Physique Rigidbody, Coroutines, Unity Test Framework",
+          github: "https://github.com/Mercuryy200/FruitBasket",
+          url: "",
         },
       },
     },

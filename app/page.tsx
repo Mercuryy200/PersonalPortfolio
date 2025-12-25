@@ -12,6 +12,7 @@ import { useState } from "react";
 import { translations, Language } from "@/lib/translation";
 import { HeroUIProvider } from "@heroui/react";
 import * as React from "react";
+import SnowfallWrapper from "@/components/ui/SnowFallWrapper";
 import "./globals.css";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <>
       <HeroUIProvider>
+        <SnowfallWrapper />
         <Header t={t} language={language} setLanguage={setLanguage} />
         <Hero t={t.hero} />
         <Divider />

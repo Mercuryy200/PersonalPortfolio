@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-almond: #BDD7De;
+  --color-almond: #bdd7de;
   --color-coffeBean: #583722;
 }
 :root {
@@ -19,7 +19,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;

@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import TechCards from "../ui/TechStack";
-import { frameworks, languages, IDEs } from "@/lib/data";
+import {
+  frameworks,
+  languages,
+  IDEs,
+  cloud,
+  databases,
+  versionControl,
+} from "@/lib/data";
 
 interface SkillsProp {
   t: {
@@ -41,6 +48,14 @@ export default function Skills({ t }: SkillsProp) {
           </div>
         </div>
         <div className="text-center">
+          <h3>Version Control</h3>
+          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+            {versionControl.map((cl) => (
+              <TechCards key={cl} language={cl} />
+            ))}
+          </div>
+        </div>
+        <div className="text-center">
           <h3>{t.framework}</h3>
           <div className=" flex justify-center gap-4 mt-4 flex-wrap">
             {frameworks.map((framework) => (
@@ -53,6 +68,22 @@ export default function Skills({ t }: SkillsProp) {
           <div className=" flex justify-center gap-4 mt-4 flex-wrap">
             {IDEs.map((ide) => (
               <TechCards key={ide} language={ide} />
+            ))}
+          </div>
+        </div>
+        <div className="text-center">
+          <h3>Cloud</h3>
+          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+            {cloud.map((cl) => (
+              <TechCards key={cl} language={cl} />
+            ))}
+          </div>
+        </div>
+        <div className="text-center">
+          <h3>Databases</h3>
+          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
+            {databases.map((cl) => (
+              <TechCards key={cl} language={cl} />
             ))}
           </div>
         </div>

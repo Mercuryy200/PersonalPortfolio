@@ -11,6 +11,7 @@ export const languages = [
   "Python",
   "C#",
   "C++",
+  "PHP",
 ];
 export const frameworks = [
   "Node.js",
@@ -19,7 +20,11 @@ export const frameworks = [
   "Vuetify",
   "ASP.NET",
   "Express.js",
+  "React.js",
+  "Tailwind CSS",
 ];
+
+export const databases = ["PostgreSQL", "MySQL", "MongoDB", "Supabase"];
 
 export const IDEs = [
   "Visual Studio Code",
@@ -32,6 +37,11 @@ export const IDEs = [
   "Xcode",
   "IntelliJ IDEA",
 ];
+export const networking = ["Linux", "VMWare", "Cisco Packet Tracer", "XAMPP"];
+export const cloud = ["AWS", "Github Action", "Vercel"];
+export const versionControl = ["GitHub", "Git"];
+export const tools = ["REST APIs", "Postman"];
+
 export const skils = [
   { name: "JavaScript", category: "language", mastery: "4/5" },
   { name: "TypeScript", category: "language", mastery: "4/5" },
