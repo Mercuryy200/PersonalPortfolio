@@ -103,7 +103,7 @@ export const translations = {
           technologies:
             "Unity, C#, Unity Asset Store, TextMesh Pro, Rigidbody Physics, Coroutines, Unity Test Framework",
           github: "https://github.com/Mercuryy200/FruitBasket",
-          url: "",
+          url: null,
         },
         project4: {
           title: "Hangman Game iOS",
@@ -123,7 +123,7 @@ export const translations = {
           technologies:
             "Swift 5, UIKit, URLSession, Storyboard, Tab Bar Controller, OMDB API, Random Word API, Auto Layout",
           github: "https://github.com/Mercuryy200/HangmanSwfitGame",
-          url: "",
+          url: null,
         },
       },
     },
@@ -276,7 +276,7 @@ export const translations = {
           technologies:
             "Unity, C#, Unity Asset Store, TextMesh Pro, Physique Rigidbody, Coroutines, Unity Test Framework",
           github: "https://github.com/Mercuryy200/FruitBasket",
-          url: "",
+          url: null,
         },
         project4: {
           title: "Jeu du Pendu iOS",
@@ -296,7 +296,7 @@ export const translations = {
           technologies:
             "Swift 5, UIKit, URLSession, Storyboard, Tab Bar Controller, API OMDB, Random Word API, Auto Layout",
           github: "https://github.com/Mercuryy200/HangmanSwfitGame",
-          url: "",
+          url: null,
         },
       },
     },
