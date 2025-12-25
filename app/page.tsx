@@ -26,13 +26,13 @@ export default function Home() {
         <Header t={t} language={language} setLanguage={setLanguage} />
         <Hero t={t.hero} />
         <Divider />
-        <About t={t.about} />
-        <Divider />
         <Projects t={t.projects} />
+        <Divider />
+        <Skills t={t.skills} />
         <Divider />
         <Experience t={t.experience} language={language} />
         <Divider />
-        <Skills t={t.skills} />
+        <About t={t.about} />
         <Divider />
         <Contact t={t.contact} />
         <Divider />

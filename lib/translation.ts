@@ -38,11 +38,12 @@ export const translations = {
     skills: {
       title: "Skills",
       languages: "Languages",
-      frontend: "Frontend",
-      backend: "Backend",
       others: "Others",
       framework: "Frameworks",
       ides: "IDEs",
+      cloud: "Cloud & DevOps",
+      databases: "Databases",
+      versionControl: "Version Control",
     },
     projects: {
       title: "Projects",
@@ -102,6 +103,26 @@ export const translations = {
           technologies:
             "Unity, C#, Unity Asset Store, TextMesh Pro, Rigidbody Physics, Coroutines, Unity Test Framework",
           github: "https://github.com/Mercuryy200/FruitBasket",
+          url: "",
+        },
+        project4: {
+          title: "Hangman Game iOS",
+          description:
+            "An iOS Hangman game featuring two game modes: guess movie titles fetched from the OMDB API or random dictionary words. Built with Swift and UIKit, the app follows the MVC architecture pattern and includes tab-based navigation for seamless switching between game modes with a responsive design supporting both iPhone and iPad devices.",
+          features: [
+            "Two game modes: Movie titles (OMDB API) and Dictionary words (Random Word API).",
+            "Tab-based navigation for easy mode switching.",
+            "Visual hangman progression with 7-stage drawing sequence.",
+            "Interactive letter keyboard with used letters tracking.",
+            "Automatic win/loss detection.",
+            "Restart game functionality for continuous play.",
+            "Responsive design with Auto Layout constraints for iPhone and iPad.",
+            "Landscape mode support on iPhone 14 Pro Max.",
+            "MVC architecture pattern for clean code organization.",
+          ],
+          technologies:
+            "Swift 5, UIKit, URLSession, Storyboard, Tab Bar Controller, OMDB API, Random Word API, Auto Layout",
+          github: "https://github.com/Mercuryy200/HangmanSwfitGame",
           url: "",
         },
       },
@@ -190,11 +211,12 @@ export const translations = {
     skills: {
       title: "Compétences",
       languages: "Languages",
-      frontend: "Frontend",
-      backend: "Backend",
       others: "Autres",
       framework: "Frameworks",
       ides: "IDEs",
+      cloud: "Cloud & DevOps",
+      databases: "Bases de données",
+      versionControl: "Contrôle de version",
     },
     projects: {
       title: "Projets",
@@ -254,6 +276,26 @@ export const translations = {
           technologies:
             "Unity, C#, Unity Asset Store, TextMesh Pro, Physique Rigidbody, Coroutines, Unity Test Framework",
           github: "https://github.com/Mercuryy200/FruitBasket",
+          url: "",
+        },
+        project4: {
+          title: "Jeu du Pendu iOS",
+          description:
+            "Un jeu du pendu iOS proposant deux modes de jeu : deviner des titres de films récupérés via l'API OMDB ou des mots aléatoires du dictionnaire. Développé avec Swift et UIKit, l'application suit le modèle d'architecture MVC et intègre une navigation par onglets pour basculer facilement entre les modes de jeu, avec un design adaptatif compatible iPhone et iPad.",
+          features: [
+            "Deux modes de jeu : Titres de films (API OMDB) et Mots du dictionnaire (Random Word API).",
+            "Navigation par onglets pour changer facilement de mode.",
+            "Progression visuelle du pendu avec séquence de dessin en 7 étapes.",
+            "Clavier de lettres interactif avec suivi des lettres utilisées.",
+            "Détection automatique de victoire/défaite.",
+            "Fonctionnalité de redémarrage pour jouer en continu.",
+            "Design adaptatif avec contraintes Auto Layout pour iPhone et iPad.",
+            "Support du mode paysage sur iPhone 14 Pro Max.",
+            "Architecture MVC pour une organisation de code claire.",
+          ],
+          technologies:
+            "Swift 5, UIKit, URLSession, Storyboard, Tab Bar Controller, API OMDB, Random Word API, Auto Layout",
+          github: "https://github.com/Mercuryy200/HangmanSwfitGame",
           url: "",
         },
       },

@@ -1,93 +1,93 @@
+import React from "react";
+import { Chip } from "@heroui/react";
 import { motion } from "framer-motion";
-import TechCards from "../ui/TechStack";
-import {
-  frameworks,
-  languages,
-  IDEs,
-  cloud,
-  databases,
-  versionControl,
-} from "@/lib/data";
+import { languages, frameworks, databases, IDEs } from "@/lib/data";
+const cloud = ["AWS", "Github Action", "Vercel"];
+const versionControl = ["GitHub", "Git"];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 },
+};
 
 interface SkillsProp {
   t: {
     title: string;
     languages: string;
-    frontend: string;
-    backend: string;
-    others: string;
     framework: string;
     ides: string;
+    cloud: string;
+    databases: string;
+    versionControl: string;
   };
 }
+
 export default function Skills({ t }: SkillsProp) {
+  const skillCategories = [
+    { title: t.languages, data: languages },
+    { title: t.framework, data: frameworks },
+    { title: t.databases, data: databases },
+    { title: t.versionControl, data: versionControl },
+    { title: t.ides, data: IDEs },
+    { title: t.cloud, data: cloud },
+  ];
+
   return (
-    <div id="skills" className=" min-h-screen flex flex-col justify-center p-4">
+    <section
+      id="skills"
+      className="min-h-screen py-20 px-4 md:px-10 flex flex-col justify-center max-w-7xl mx-auto"
+    >
       <motion.h2
         className="text-4xl md:text-5xl font-bold text-center mb-12"
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
       >
         {t.title}
       </motion.h2>
-      <motion.div
-        className="text-lg mx-5 lg:mx-20 mb-20  flex flex-col flex-wrap justify-between items-center "
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <div className="text-center">
-          <h3>{t.languages} </h3>
-          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
-            {languages.map((language) => (
-              <TechCards key={language} language={language} />
-            ))}
-          </div>
-        </div>
-        <div className="text-center">
-          <h3>Version Control</h3>
-          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
-            {versionControl.map((cl) => (
-              <TechCards key={cl} language={cl} />
-            ))}
-          </div>
-        </div>
-        <div className="text-center">
-          <h3>{t.framework}</h3>
-          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
-            {frameworks.map((framework) => (
-              <TechCards key={framework} language={framework} />
-            ))}
-          </div>
-        </div>
-        <div className="text-center">
-          <h3>IDEs</h3>
-          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
-            {IDEs.map((ide) => (
-              <TechCards key={ide} language={ide} />
-            ))}
-          </div>
-        </div>
-        <div className="text-center">
-          <h3>Cloud</h3>
-          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
-            {cloud.map((cl) => (
-              <TechCards key={cl} language={cl} />
-            ))}
-          </div>
-        </div>
-        <div className="text-center">
-          <h3>Databases</h3>
-          <div className=" flex justify-center gap-4 mt-4 flex-wrap">
-            {databases.map((cl) => (
-              <TechCards key={cl} language={cl} />
-            ))}
-          </div>
-        </div>
-      </motion.div>
-    </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skillCategories.map((category, idx) => (
+          <motion.div
+            key={idx}
+            className="flex flex-col items-center glassBackground text-center p-6 rounded-2xl border shadow-sm hover:shadow-md transition-all duration-300"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={containerVariants}
+          >
+            <h3 className="text-xl font-semibold mb-6 text-coffeBean">
+              {category.title}
+            </h3>
+
+            <div className="flex flex-wrap justify-center gap-3">
+              {category.data.map((skill) => (
+                <motion.div key={skill} variants={itemVariants}>
+                  <Chip
+                    size="sm"
+                    variant="shadow"
+                    classNames={{
+                      base: "bg-coffeBean border border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-xl cursor-default",
+                      content: "text-white text-xs font-semibold px-2 py-1",
+                    }}
+                  >
+                    {skill}
+                  </Chip>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
   );
 }

@@ -14,10 +14,10 @@ export default function Header({ t, language, setLanguage }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: t.nav.about, href: "#about" },
     { name: t.nav.projects, href: "#projects" },
-    { name: t.nav.experience, href: "#experience" },
     { name: t.nav.skills, href: "#skills" },
+    { name: t.nav.experience, href: "#experience" },
+    { name: t.nav.about, href: "#about" },
     { name: t.nav.contact, href: "#contact" },
   ];
 
