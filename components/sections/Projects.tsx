@@ -7,7 +7,7 @@ interface Project {
   features: string[];
   technologies: string;
   github: string;
-  url: string;
+  url: string | null;
 }
 
 interface ProjectsProp {

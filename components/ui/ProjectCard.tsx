@@ -15,7 +15,7 @@ type ProjectCardProps = {
   features: string[];
   technologies: string;
   github: string;
-  url: string;
+  url: string | null;
 };
 
 export default function ProjectCard({
