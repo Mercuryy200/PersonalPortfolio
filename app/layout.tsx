@@ -8,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: {
     template: "%s | Rima Nafougui",
-    default: "Rima Nafougui | Software Engineering Student & Developer'",
+    default: "Rima Nafougui | Software Developer",
   },
   description:
     "Portfolio of Rima Nafougui, a Software Engineering student. Specializing web and mobile development",
