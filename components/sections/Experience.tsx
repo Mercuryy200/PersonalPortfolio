@@ -41,7 +41,7 @@ export default function Experience({ t, language }: ExperienceProp) {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <Info items={t.items} />
+        <Info viewMore={t.viewMore} items={t.items} />
         <div className="pt-8">
           <ResumeDownload language={language} />
         </div>
