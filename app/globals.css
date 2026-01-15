@@ -65,3 +65,17 @@ h3 {
 input:focus {
   outline: none;
 }
+
+.cartier-toast [data-title] {
+  font-family: serif;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.cartier-toast [data-description] {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  opacity: 0.8;
+}

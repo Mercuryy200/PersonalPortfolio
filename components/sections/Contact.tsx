@@ -51,10 +51,14 @@ export default function Contact({ t }: any) {
       });
 
       if (response?.success) {
-        toast.success("Message sent successfully.");
+        toast.success("Message Received", {
+          description: "I will respond to your inquiry shortly.",
+        });
         reset();
       } else {
-        toast.error("Failed to send message.");
+        toast.error("Submission Error", {
+          description: "Please verify your details and try again.",
+        });
       }
     } catch (error) {
       toast.error("An error occurred during submission.");

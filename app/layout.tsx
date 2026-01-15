@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-
+import { Toaster } from "sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -35,7 +35,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.className}>
       <body>
-        {children}
+        {children}{" "}
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            style: {
+              background: "#F5F2ED",
+              color: "#3C2A21",
+              border: "1px solid #D4C3A3",
+              borderRadius: "0px",
+              fontFamily: "var(--font-montserrat), sans-serif",
+            },
+          }}
+        />
         <SpeedInsights />
         <Analytics />
         <ScrollToTop />
