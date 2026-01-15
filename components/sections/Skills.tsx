@@ -1,11 +1,9 @@
-import React from "react";
+"use client";
 import { Chip } from "@heroui/react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { languages, frameworks, databases, IDEs } from "@/lib/data";
-const cloud = ["AWS", "Github Action", "Vercel"];
-const versionControl = ["GitHub", "Git"];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -13,7 +11,7 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0 },
 };
@@ -35,50 +33,49 @@ export default function Skills({ t }: SkillsProp) {
     { title: t.languages, data: languages },
     { title: t.framework, data: frameworks },
     { title: t.databases, data: databases },
-    { title: t.versionControl, data: versionControl },
+    { title: t.versionControl, data: ["GitHub", "Git"] },
     { title: t.ides, data: IDEs },
-    { title: t.cloud, data: cloud },
+    { title: t.cloud, data: ["AWS", "Vercel", "Github Action"] },
   ];
 
   return (
     <section
       id="skills"
-      className="min-h-screen py-20 px-4 md:px-10 flex flex-col justify-center max-w-7xl mx-auto"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-almondBeige"
     >
-      <motion.h2
-        className="text-4xl md:text-5xl font-bold text-center mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+      <motion.div
+        className="mb-16 space-y-4"
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
       >
-        {t.title}
-      </motion.h2>
+        <h2 className="text-5xl md:text-7xl text-center font-serif italic">
+          {t.title}
+        </h2>
+        <div className="h-1.5 w-32 bg-cartierRed" />
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skillCategories.map((category, idx) => (
           <motion.div
             key={idx}
-            className="flex flex-col items-center glassBackground text-center p-6 rounded-2xl border shadow-sm hover:shadow-md transition-all duration-300"
+            className="flex flex-col bg-almondBeige/40 p-8 rounded-none border border-sandGold/30 hover:border-cartierRed/30 transition-all duration-500"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={containerVariants}
           >
-            <h3 className="text-xl font-semibold mb-6 text-coffeBean">
+            <h3 className="text-xs font-black uppercase tracking-[0.3em] mb-8 text-coffeeBean/60 border-b border-sandGold/20 pb-2">
               {category.title}
             </h3>
 
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="flex flex-wrap gap-2">
               {category.data.map((skill) => (
                 <motion.div key={skill} variants={itemVariants}>
                   <Chip
                     size="sm"
-                    variant="shadow"
-                    classNames={{
-                      base: "bg-coffeBean border border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-xl cursor-default",
-                      content: "text-white text-xs font-semibold px-2 py-1",
-                    }}
+                    variant="flat"
+                    className="bg-cartierRed/5 p-3 text-cartierRed border border-cartierRed/10 text-[10px] font-bold uppercase tracking-wider rounded-full"
                   >
                     {skill}
                   </Chip>

@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import Info from "@/components/ui/Info";
 import ResumeDownload from "@/components/ui/ResumeDownload";
@@ -19,30 +20,34 @@ interface ExperienceProp {
 
 export default function Experience({ t, language }: ExperienceProp) {
   return (
-    <div
+    <section
       id="experience"
-      className="min-h-screen flex flex-col justify-center p-4 "
+      className="py-24 px-6 md:px-12 lg:px-24 bg-almondBeige"
     >
-      <motion.h2
-        className="text-4xl md:text-5xl font-bold text-center mb-12"
-        initial={{ opacity: 0, y: 50 }}
+      <motion.div
+        className="mb-16 text-center space-y-4"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        {t.title}
-      </motion.h2>
+        <h2 className="text-5xl md:text-7xl font-serif italic text-center">
+          {t.title}
+        </h2>
+        <div className="h-1 w-24 bg-cartierRed mx-auto" />
+      </motion.div>
+
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        className="flex flex-col items-center space-y-12"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <div className="flex flex-col items-center">
-          <Info viewMore={t.viewMore} items={t.items} />
+        <Info viewMore={t.viewMore} items={t.items} />
+        <div className="pt-8">
           <ResumeDownload language={language} />
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 }

@@ -133,6 +133,7 @@ export const translations = {
     },
     footer: {
       rights: "All rights reserved",
+      badge: "Available for Internships: March – Aug 2026",
     },
     experience: {
       title: "Experience",
@@ -310,6 +311,7 @@ export const translations = {
     },
     footer: {
       rights: "Tous droits réservés",
+      badge: "Disponible pour stages : Mars – Août 2026",
     },
     experience: {
       title: "Expériences",

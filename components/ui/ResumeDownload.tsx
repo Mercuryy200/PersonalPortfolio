@@ -29,7 +29,7 @@ export default function ResumeDownload({ language }: ResumeDownloadProps) {
   return (
     <button
       onClick={handleDownloadResume}
-      className="group relative flex items-center gap-2 px-8 py-3.5 border-2 border-coffeBean text-coffeBean font-bold rounded-full overflow-hidden transition-all duration-300 hover:text-almond active:scale-95 cursor-pointer shadow-sm hover:shadow-md"
+      className="group relative flex items-center gap-2 px-8 py-3.5 border-2 border-coffeBean text-coffeBean font-bold rounded-full overflow-hidden transition-all duration-300 hover:text-gold active:scale-95 cursor-pointer shadow-sm hover:shadow-md"
     >
       <span className="absolute inset-0 bg-coffeBean translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
 

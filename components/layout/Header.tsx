@@ -26,11 +26,11 @@ export default function Header({ t, language, setLanguage }: Props) {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-almond/70 backdrop-blur-md z-50 border-b border-coffeBean/10">
+    <nav className="fixed top-0 w-full bg-almond/70 backdrop-blur-md z-50 ">
       <div className=" sm:p-4 ">
         <div className="relative flex h-20 w-full items-center justify-between">
           <Link href="/" className="flex-shrink-0">
-            <p className="text-4xl lg:text-7xl  font-bold p-4">R</p>
+            <p className="text-4xl lg:text-7xl text-cartier font-bold p-4">R</p>
           </Link>
 
           <div className="hidden lg:flex lg:space-x-8">
@@ -38,7 +38,7 @@ export default function Header({ t, language, setLanguage }: Props) {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg hover:text-amber-50 hover:scale-110 transition-all duration-300 font-medium"
+                className="text-lg hover:text-cartier hover:scale-110 transition-all duration-300 font-medium"
               >
                 {item.name}
               </Link>
@@ -78,7 +78,7 @@ export default function Header({ t, language, setLanguage }: Props) {
               key={item.name}
               href={item.href}
               onClick={handleLinkClick}
-              className="block rounded-md px-3 py-2 text-base font-medium text-coffeeBean hover:bg-coffeBean/10  hover:text-white transition-colors"
+              className="block rounded-md px-3 py-2 text-base font-medium text-coffeeBean hover:bg-cartier hover:text-white transition-colors"
             >
               {item.name}
             </Link>

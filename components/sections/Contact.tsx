@@ -1,185 +1,174 @@
 "use client";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import React from "react";
-import { Input, Button, Textarea } from "@heroui/react";
 import { sendMail } from "@/lib/send-mail";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 
 const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Please Enter Your Name" }),
-  email: z.email({ message: "Please Enter a Valid Email Address" }),
-  message: z.string().min(10, {
-    message: "Please make sure your message is at least 10 characters long.",
-  }),
+  name: z.string().min(2, { message: "Name is too short" }),
+  email: z.email({ message: "Invalid email address" }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters" }),
 });
 
-interface ContactProps {
-  t: {
-    title: string;
-    name: {
-      errorMessage: string;
-      label: string;
-      placeholder: string;
-    };
-    email: {
-      errorMessage: string;
-      label: string;
-      placeholder: string;
-    };
-    message: {
-      errorMessage: string;
-      label: string;
-      placeholder: string;
-    };
-    submit: string;
-    reset: string;
-  };
-}
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
-export default function Contact({ t }: ContactProps) {
-  const form = useForm<z.infer<typeof contactFormSchema>>({
+export default function Contact({ t }: any) {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      message: "",
-    },
   });
 
-  const isLoading = form.formState.isSubmitting;
-
-  const onSubmit = async (values: z.infer<typeof contactFormSchema>) => {
-    console.log("Submitting form with:", values);
-    const mailText = `Name: ${values.name}\nEmail: ${values.email}\nMessage: ${values.message}`;
-    const mailHtml = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
-          New Contact Form Submission
-        </h2>
-        <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
-          <p style="margin: 10px 0;"><strong>Name:</strong> ${values.name}</p>
-          <p style="margin: 10px 0;"><strong>Email:</strong> ${values.email}</p>
-        </div>
-        <div style="margin: 20px 0;">
-          <p style="margin: 10px 0;"><strong>Message:</strong></p>
-          <p style="background-color: #fff; padding: 15px; border-left: 4px solid #007bff; white-space: pre-wrap;">
-            ${values.message}
+  const onSubmit = async (values: ContactFormData) => {
+    try {
+      // Construction of dynamic HTML content
+      const mailHtml = `
+        <div style="font-family: serif; max-width: 600px; color: #3C2A21;">
+          <h2 style="color: #A02021; border-bottom: 1px solid #D4C3A3; padding-bottom: 10px;">
+            New Portfolio Inquiry
+          </h2>
+          <p><strong>From:</strong> ${values.name} (${values.email})</p>
+          <div style="background-color: #F5F2ED; padding: 20px; border-radius: 4px; margin-top: 20px; border-left: 4px solid #A02021;">
+            <p style="margin: 0; font-style: italic;">"${values.message}"</p>
+          </div>
+          <p style="font-size: 10px; color: #D4C3A3; margin-top: 20px; text-transform: uppercase; tracking: 0.1em;">
+            Sent from rimanafougui.vercel.app
           </p>
         </div>
-        <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
-        <p style="color: #666; font-size: 12px;">
-          This email was sent from your website contact form.
-        </p>
-      </div>
-    `;
+      `;
 
-    try {
       const response = await sendMail({
         email: values.email,
-        subject: `New Contact Form: ${values.name}`,
-        text: mailText,
-        html: mailHtml,
+        subject: `Inquiry from ${values.name}`,
+        text: `Name: ${values.name}\nEmail: ${values.email}\nMessage: ${values.message}`,
+        html: mailHtml, // Now using the dynamic variable instead of a hardcoded string
       });
 
       if (response?.success) {
-        toast.success("Message sent successfully! We'll get back to you soon.");
-        form.reset();
+        toast.success("Message sent successfully.");
+        reset();
       } else {
-        toast.error(
-          response?.error || "Failed to send message. Please try again."
-        );
+        toast.error("Failed to send message.");
       }
     } catch (error) {
-      console.error("Form submission error:", error);
-      toast.error("An unexpected error occurred. Please try again later.");
+      toast.error("An error occurred during submission.");
     }
   };
 
+  const labelStyle =
+    "block text-[10px] font-black uppercase text-cartier tracking-[0.3em] text-coffeeBean mb-4";
+  const inputStyle =
+    "w-full bg-transparent py-3 text-lg text-coffeeBean outline-none transition-colors duration-300 placeholder:text-coffeeBean/20";
+
   return (
-    <div
+    <section
       id="contact"
-      className="min-h-screen flex flex-col justify-center items-center px-4 md:px-20"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-almondBeige min-h-screen flex flex-col items-center"
     >
-      <motion.h2
-        className="text-4xl md:text-5xl font-bold text-center mb-12"
-        initial={{ opacity: 0, y: 50 }}
+      <motion.div
+        className="mb-20 text-center space-y-4"
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        {t.title}
-      </motion.h2>
+        <h2 className="text-5xl md:text-7xl font-serif italic text-coffeeBean">
+          {t.title}
+        </h2>
+      </motion.div>
 
       <motion.div
-        className="w-full max-w-md glassBackground"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
+        className="w-full max-w-3xl"
+        initial={{ opacity: 0, scale: 0.98 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
         <form
-          className="glassBackground flex flex-col gap-6 p-8 rounded-xl shadow-lg"
-          onSubmit={form.handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(onSubmit)}
+          className="bg-almondBeige/30 border border-sandGold/30 p-10 md:p-16 space-y-16"
         >
-          <Input
-            isRequired
-            isInvalid={!!form.formState.errors.name}
-            errorMessage={form.formState.errors.name?.message}
-            label={t.name.label}
-            labelPlacement="outside-top"
-            placeholder={t.name.placeholder}
-            type="text"
-            {...form.register("name")}
-            autoComplete="off"
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+            <div className="relative group">
+              <label htmlFor="name" className={labelStyle}>
+                {t.name.label}
+              </label>
+              <input
+                id="name"
+                type="text"
+                placeholder={t.name.placeholder}
+                {...register("name")}
+                className={inputStyle}
+              />
+              {errors.name && (
+                <span className="text-cartier text-xs mt-2 block">
+                  {errors.name.message}
+                </span>
+              )}
+            </div>
 
-          <Input
-            isRequired
-            isInvalid={!!form.formState.errors.email}
-            errorMessage={form.formState.errors.email?.message}
-            label={t.email.label}
-            labelPlacement="outside-top"
-            placeholder={t.email.placeholder}
-            type="email"
-            {...form.register("email")}
-            autoComplete="off"
-          />
+            <div className="relative group">
+              <label htmlFor="email" className={labelStyle}>
+                {t.email.label}
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder={t.email.placeholder}
+                {...register("email")}
+                className={inputStyle}
+              />
+              {errors.email && (
+                <span className="text-cartier text-xs mt-2 block">
+                  {errors.email.message}
+                </span>
+              )}
+            </div>
+          </div>
 
-          <Textarea
-            isRequired
-            isInvalid={!!form.formState.errors.message}
-            errorMessage={form.formState.errors.message?.message}
-            label={t.message.label}
-            labelPlacement="outside"
-            placeholder={t.message.placeholder}
-            className="pb-4"
-            {...form.register("message")}
-          />
+          <div className="relative group">
+            <label htmlFor="message" className={labelStyle}>
+              {t.message.label}
+            </label>
+            <textarea
+              id="message"
+              rows={4}
+              placeholder={t.message.placeholder}
+              {...register("message")}
+              className={`${inputStyle} resize-none`}
+            />
+            {errors.message && (
+              <span className="text-cartier text-xs mt-2 block">
+                {errors.message.message}
+              </span>
+            )}
+          </div>
 
-          <div className="flex gap-4 justify-end">
-            <Button
-              color="primary"
+          <div className="flex flex-col md:flex-row gap-6 justify-center pt-8">
+            <button
               type="submit"
-              className="bg-coffeBean text-almond rounded-xl w-1/2 p-2"
-              disabled={isLoading}
+              disabled={isSubmitting}
+              className="px-16 py-5 bg-cartier text-gold rounded-full font-bold text-lg  transition-all duration-500 shadow-md active:scale-95 disabled:opacity-50"
             >
-              {isLoading ? "Sending..." : t.submit}
-            </Button>
+              {isSubmitting ? "..." : t.submit}
+            </button>
 
-            <Button
+            <button
               type="button"
-              className="bg-coffeBean text-almond rounded-xl w-1/2 p-2"
-              variant="flat"
-              onPress={() => form.reset()}
+              onClick={() => reset()}
+              className="px-16 py-5 border border-coffeeBean/20 text-coffeeBean rounded-full font-bold text-lg hover:bg-coffeeBean/5 transition-all duration-500"
             >
               {t.reset}
-            </Button>
+            </button>
           </div>
         </form>
       </motion.div>
-    </div>
+    </section>
   );
 }

@@ -1,13 +1,61 @@
+"use client";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 interface FooterProps {
   t: {
     rights: string;
+    badge: string;
   };
 }
 
 export default function Footer({ t }: FooterProps) {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <div className="w-full text-center py-4 bg-faf0ca">
-      Rima Nafougui | {t.rights} &copy; 2025
-    </div>
+    <footer className="w-full bg-coffeeBean text-almondBeige py-12 px-6 md:px-24 border-t border-sandGold/20">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="flex flex-col items-center md:items-start space-y-2">
+          <p className="font-serif italic text-2xl tracking-tight">
+            Rima Nafougui
+          </p>
+          <p className="text-[10px] uppercase tracking-[0.2em] opacity-60">
+            {t.rights} &copy; {currentYear}
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3 px-5 py-2 border border-sandGold/30 rounded-full bg-white/5">
+          <span className="text-[11px] font-bold uppercase tracking-widest">
+            {t.badge}
+          </span>
+        </div>
+
+        <div className="flex gap-4">
+          {[
+            {
+              icon: faGithub,
+              href: "https://github.com/Mercuryy200",
+              label: "GitHub",
+            },
+            {
+              icon: faLinkedin,
+              href: "https://www.linkedin.com/in/rima-nafougui/",
+              label: "LinkedIn",
+            },
+          ].map((social, i) => (
+            <Link
+              key={i}
+              href={social.href}
+              target="_blank"
+              aria-label={social.label}
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-almondBeige/20 hover:bg-cartierRed hover:border-cartierRed transition-all duration-500"
+            >
+              <FontAwesomeIcon icon={social.icon} />
+            </Link>
+          ))}
+        </div>
+      </div>
+    </footer>
   );
 }

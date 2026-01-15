@@ -55,7 +55,7 @@ export default function Hero({ t, language }: HeroProps) {
           className="text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
         >
           {t.intro}{" "}
-          <span className="text-coffeBean font-bold font-serif italic block mt-2">
+          <span className="text-cartier font-bold font-serif italic block mt-2">
             Rima Nafougui
           </span>
         </motion.h1>
@@ -73,7 +73,7 @@ export default function Hero({ t, language }: HeroProps) {
         >
           <Link
             href="#projects"
-            className="flex items-center gap-2 bg-coffeBean text-almond px-8 py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95"
+            className="flex items-center gap-2 bg-cartier text-gold px-8 py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95"
           >
             {t.ctaProjects}
             <ArrowRight size={20} />
@@ -93,7 +93,7 @@ export default function Hero({ t, language }: HeroProps) {
             },
             {
               icon: faLinkedin,
-              href: "https://www.linkedin.com/in/rima-nafougui",
+              href: "https://www.linkedin.com/in/rima-nafougui/",
               label: "LinkedIn",
             },
           ].map((social, i) => (
@@ -102,7 +102,7 @@ export default function Hero({ t, language }: HeroProps) {
               href={social.href}
               target="_blank"
               aria-label={social.label}
-              className="flex items-center justify-center w-14 h-14 rounded-full border border-coffeBean/20 text-coffeBean hover:bg-coffeBean hover:text-almond hover:scale-110 transition-all duration-300 shadow-sm"
+              className="flex items-center justify-center w-14 h-14 rounded-full border border-coffeBean/20 text-coffeBean hover:bg-coffeBean hover:text-cartier hover:scale-110 transition-all duration-300 shadow-sm"
             >
               <FontAwesomeIcon icon={social.icon} size="lg" />
             </Link>
@@ -110,17 +110,16 @@ export default function Hero({ t, language }: HeroProps) {
         </motion.div>
       </motion.div>
 
-      {/* Modern Animated Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40"
       >
-        <span className="text-[10px] uppercase tracking-[0.2em] font-black">
+        <span className="text-[10px] uppercase tracking-[0.2em] font-black text-cartier">
           {t.scroll}
         </span>
-        <div className="w-[1px] h-12 bg-coffeBean/30 relative overflow-hidden">
+        <div className="w-[1px] h-12 bg-cartier/30 relative overflow-hidden">
           <motion.div
             animate={{ y: [0, 48, 0] }}
             transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}

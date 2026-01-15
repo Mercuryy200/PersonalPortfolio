@@ -12,7 +12,7 @@ export default function LanguageSwitcher({ language, setLanguage }: Props) {
         onClick={() => setLanguage("en")}
         className={`px-3 py-2 text-sm font-medium ${
           language === "en"
-            ? "bg-coffeBean text-almond"
+            ? "bg-cartier text-almond"
             : "bg-almond text-gray-700 hover:bg-gray-50"
         }`}
       >
@@ -22,7 +22,7 @@ export default function LanguageSwitcher({ language, setLanguage }: Props) {
         onClick={() => setLanguage("fr")}
         className={`px-3 py-2 text-sm font-medium border-l border-gray-300 ${
           language === "fr"
-            ? "bg-coffeBean text-almond"
+            ? "bg-cartier text-almond"
             : "bg-almond text-gray-700 hover:bg-gray-50"
         }`}
       >

@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+"use client";
+import { motion, Variants } from "framer-motion";
 import ProjectCard from "../ui/ProjectCard";
 
 interface Project {
@@ -20,34 +21,67 @@ interface ProjectsProp {
 export default function Projects({ t }: ProjectsProp) {
   const projects = Object.values(t.items);
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
   return (
-    <div
+    <section
       id="projects"
-      className="min-h-screen flex flex-col justify-center p-4"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-almond overflow-hidden"
     >
-      <motion.h2
-        className="text-4xl md:text-5xl font-bold text-center mb-12"
-        initial={{ opacity: 0, y: 50 }}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="mb-16 space-y-4"
+      >
+        <h2 className="text-5xl md:text-7xl font-serif italic text-center">
+          {t.title}
+        </h2>
+      </motion.div>
+
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 auto-rows-[minmax(300px,auto)]"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
       >
-        {t.title}
-      </motion.h2>
+        {projects.map((project, index) => {
+          // Designer logic: Make specific projects span more columns for visual interest
+          const isLarge = index === 0 || index === 1; // Highlight the first two (Portfolio & Closet Manager)
 
-      <div className="flex justify-center gap-4 mt-4 flex-wrap">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.github || index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-          >
-            <ProjectCard {...project} />
-          </motion.div>
-        ))}
-      </div>
-    </div>
+          return (
+            <motion.div
+              key={project.github || index}
+              variants={{
+                hidden: { opacity: 0, scale: 0.95 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.5 },
+                },
+              }}
+              className={`
+                ${
+                  isLarge
+                    ? "md:col-span-3 lg:col-span-6"
+                    : "md:col-span-3 lg:col-span-4"
+                }
+                flex flex-col h-full
+              `}
+            >
+              <ProjectCard {...project} />
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </section>
   );
 }

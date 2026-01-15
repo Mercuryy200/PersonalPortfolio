@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardHeader,
@@ -5,9 +6,11 @@ import {
   CardFooter,
   Button,
   Divider,
+  Chip,
 } from "@heroui/react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ExternalLink } from "lucide-react";
 
 type ProjectCardProps = {
   title: string;
@@ -26,39 +29,79 @@ export default function ProjectCard({
   github,
   url,
 }: ProjectCardProps) {
+  // Split technologies string into an array for cleaner tagging
+  const techList = technologies.split(",").map((tech) => tech.trim());
+
   return (
     <Card
-      className="glassBackground py-4 max-w-md shadow-lg rounded-2xl border border-default-200 h-120"
+      className="glassBackground bg-almond/50 h-full border border-sandGold/30 shadow-none hover:border-cartier/40 transition-all duration-500 group"
       isPressable={!!url}
       onPress={() => {
         if (url) window.open(url, "_blank");
       }}
     >
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-        <h4 className="font-bold text-large mt-1">{title}</h4>
-        <small className="text-default-500 mt-1">{technologies}</small>
+      <CardHeader className="flex-col items-start px-6 pt-6 pb-2">
+        <div className="flex justify-between w-full items-start">
+          <h4 className="font-serif italic text-2xl text-coffeeBean group-hover:text-cartier transition-colors duration-300">
+            {title}
+          </h4>
+          {url && (
+            <ExternalLink
+              size={18}
+              className="text-sandGold opacity-0 group-hover:opacity-100 transition-opacity"
+            />
+          )}
+        </div>
+
+        {/* Technology Badges */}
+        <div className="flex flex-wrap gap-1.5 mt-3">
+          {techList.map((tech) => (
+            <Chip
+              key={tech}
+              size="sm"
+              variant="flat"
+              className="bg-cartier/5 text-cartier border border-cartier/10 text-[10px] p-3 font-bold uppercase tracking-wider"
+            >
+              {tech}
+            </Chip>
+          ))}
+        </div>
       </CardHeader>
-      <Divider className="my-2" />
-      <CardBody className="overflow-y-scroll py-2 px-4  [&::-webkit-scrollbar]:bg-transparent  [&::-webkit-scrollbar-thumb]:bg-white/50  ">
-        <p className="text-sm text-default-700 mb-3">{description}</p>
-        <ul className="list-disc pl-5 space-y-1 text-sm text-default-600">
-          {features.map((feature, index) => (
-            <li key={index}>{feature}</li>
+
+      <CardBody className="px-6 py-4 overflow-hidden">
+        <p className="text-sm text-coffeeBean/80 leading-relaxed mb-4 line-clamp-3">
+          {description}
+        </p>
+
+        <ul className="space-y-2">
+          {features.slice(0, 3).map((feature, index) => (
+            <li
+              key={index}
+              className="flex items-start gap-2 text-xs text-coffeeBean/70"
+            >
+              <span className="text-cartier mt-1">•</span>
+              {feature}
+            </li>
           ))}
         </ul>
       </CardBody>
-      <CardFooter className="flex justify-end px-4">
+
+      <Divider className="bg-sandGold/20 mx-6 w-auto" />
+
+      <CardFooter className="px-6 py-4 flex justify-between items-center">
+        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-sandGold opacity-60">
+          Source Code
+        </span>
         <Button
           as="a"
           href={github}
           target="_blank"
           rel="noopener noreferrer"
-          color="primary"
-          variant="flat"
-          className="rounded-md bg-coffeBean text-almond"
+          variant="light"
+          className="rounded-full border border-coffeeBean/20 text-coffeeBean hover:bg-cartier hover:text-almond hover:border-cartier transition-all duration-300"
+          isIconOnly
         >
-          GitHub
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} className="text-lg" />
         </Button>
       </CardFooter>
     </Card>

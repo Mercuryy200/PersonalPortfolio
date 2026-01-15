@@ -1,7 +1,6 @@
 "use server";
 import nodemailer from "nodemailer";
 
-// Validate environment variables on module load
 const SMTP_SERVER_USERNAME = process.env.SMTP_SERVER_USERNAME;
 const SMTP_SERVER_PASSWORD = process.env.SMTP_SERVER_PASSWORD;
 const SITE_MAIL_RECIEVER = process.env.SITE_MAIL_RECIEVER;
@@ -12,7 +11,6 @@ if (!SMTP_SERVER_USERNAME || !SMTP_SERVER_PASSWORD || !SITE_MAIL_RECIEVER) {
   );
 }
 
-// Create transporter once at module level for reuse
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -33,16 +31,15 @@ export async function sendMail({
   html?: string;
 }) {
   try {
-    // Verify connection configuration
     await transporter.verify();
 
     const info = await transporter.sendMail({
-      from: `"Your Website" <${SMTP_SERVER_USERNAME}>`, // Better sender format
+      from: `"Your Website" <${SMTP_SERVER_USERNAME}>`,
       replyTo: email,
       to: SITE_MAIL_RECIEVER,
       subject,
       text,
-      html: html ? html : text.replace(/\n/g, "<br>"), // Fallback HTML
+      html: html ? html : text.replace(/\n/g, "<br>"),
     });
 
     console.log("✅ Message sent:", info.messageId);
@@ -50,12 +47,10 @@ export async function sendMail({
   } catch (error) {
     console.error("❌ Mail sending failed:", error);
 
-    // Return more detailed error information
     if (error instanceof Error) {
       return {
         success: false,
         error: error.message,
-        // Don't expose sensitive error details to client
         details:
           process.env.NODE_ENV === "development" ? error.stack : undefined,
       };
@@ -65,7 +60,6 @@ export async function sendMail({
   }
 }
 
-// Optional: Add rate limiting helper
 let emailsSentThisMinute = 0;
 let lastResetTime = Date.now();
 
@@ -74,13 +68,11 @@ export async function sendMailWithRateLimit(
 ) {
   const now = Date.now();
 
-  // Reset counter every minute
   if (now - lastResetTime > 60000) {
     emailsSentThisMinute = 0;
     lastResetTime = now;
   }
 
-  // Limit to 10 emails per minute (adjust as needed)
   if (emailsSentThisMinute >= 10) {
     return {
       success: false,
