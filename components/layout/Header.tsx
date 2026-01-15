@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -14,10 +15,10 @@ export default function Header({ t, language, setLanguage }: Props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
+    { name: t.nav.about, href: "#about" },
     { name: t.nav.projects, href: "#projects" },
     { name: t.nav.skills, href: "#skills" },
     { name: t.nav.experience, href: "#experience" },
-    { name: t.nav.about, href: "#about" },
     { name: t.nav.contact, href: "#contact" },
   ];
 
@@ -26,67 +27,69 @@ export default function Header({ t, language, setLanguage }: Props) {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-almond/70 backdrop-blur-md z-50 ">
-      <div className=" sm:p-4 ">
-        <div className="relative flex h-20 w-full items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
-            <p className="text-4xl lg:text-7xl text-cartier font-bold p-4">R</p>
+    <nav className="fixed top-0 w-full bg-almond/80 backdrop-blur-lg z-[100] border-b border-gold/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="flex h-24 items-center justify-between">
+          <Link href="/" className="group">
+            <div className="flex items-center gap-2">
+              <span className="text-4xl lg:text-5xl font-serif italic text-coffee group-hover:text-cartier transition-colors duration-500">
+                R.
+              </span>
+              <div className="hidden md:block h-px w-0 group-hover:w-12 bg-cartier transition-all duration-700" />
+            </div>
           </Link>
 
-          <div className="hidden lg:flex lg:space-x-8">
+          <div className="hidden lg:flex lg:items-center lg:space-x-10">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg hover:text-cartier hover:scale-110 transition-all duration-300 font-medium"
+                className="text-[10px] font-black uppercase tracking-[0.3em] text-coffee/70 hover:text-cartier transition-all duration-300"
               >
                 {item.name}
               </Link>
             ))}
-          </div>
 
-          <div className="hidden lg:flex">
+            <div className="h-4 w-px bg-gold/30 mx-2" />
+
             <LanguageSwitcher language={language} setLanguage={setLanguage} />
           </div>
 
-          <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
+          <div className="flex items-center lg:hidden gap-4">
+            <LanguageSwitcher language={language} setLanguage={setLanguage} />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-coffeBean hover:bg-coffeBean/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-coffeBean transition-colors"
+              className="p-2 text-coffee hover:text-cartier transition-colors"
               aria-expanded={isMenuOpen}
             >
-              <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />
+                <X size={28} strokeWidth={1.5} />
               ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
+                <Menu size={28} strokeWidth={1.5} />
               )}
             </button>
           </div>
         </div>
       </div>
+
       <div
-        className={`lg:hidden transition-all duration-300 ease-in-out ${
+        className={`lg:hidden fixed inset-x-0 bg-almond transition-all duration-500 ease-in-out border-b border-gold/20 ${
           isMenuOpen
-            ? "max-h-96 opacity-100"
+            ? "max-h-screen opacity-100"
             : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >
-        <div className="space-y-1 px-4 pb-3 pt-2">
+        <div className="flex flex-col items-center space-y-8 py-12">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               onClick={handleLinkClick}
-              className="block rounded-md px-3 py-2 text-base font-medium text-coffee hover:bg-cartier hover:text-white transition-colors"
+              className="text-xs font-black uppercase tracking-[0.4em] text-coffee hover:text-cartier transition-colors"
             >
               {item.name}
             </Link>
           ))}
-
-          <div className="px-3 py-2">
-            <LanguageSwitcher language={language} setLanguage={setLanguage} />
-          </div>
         </div>
       </div>
     </nav>
