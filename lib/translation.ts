@@ -146,6 +146,7 @@ export const translations = {
           duration: "May 2025 - Present",
           description:
             "Assist college and university students in programming concepts in SQL, Java, Python, JavaScript, Kotlin, Swift and more. \nProvide guidance on code debugging and algorithm problem-solving. \nCreate additional learning materials to enhance student understanding",
+          reference: "Professional Reference Available",
         },
         {
           position: "Tutor in Mathematics",
@@ -153,6 +154,7 @@ export const translations = {
           duration: "August 2024 - Present",
           description:
             "Assist 5 college students in mathematics for computer science courses, including linear algebra and discrete mathematics. \nProvide guidance on solving computer-related problems (e.g., ray tracing calculations). \nCreate additional learning materials to enhance student understanding",
+          reference: "Professional Reference Available",
         },
       ],
     },
@@ -353,6 +355,7 @@ export const translations = {
           duration: "Mai 2025 - Présent",
           description:
             "Assister les étudiants collégiaux et universitaires dans les concepts de programmation en SQL, Java, Python, JavaScript, Kotlin, Swift et plus encore. \nFournir des conseils sur le débogage de code et la résolution de problèmes algorithmiques. \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
+          reference: "Référence professionelle disponible",
         },
         {
           position: "Tuteur en mathématiques",
@@ -360,6 +363,7 @@ export const translations = {
           duration: "Août 2024 - Présent",
           description:
             "Assister 5 étudiants collégiaux en mathématiques dans les cours destinés aux étudiants en informatique, incluant l'algèbre linéaire et les mathématiques discrètes. \nFournir des conseils sur la résolution de problèmes liés à l'informatique (par exemple, calculs de ray tracing). \nCréer du matériel d'apprentissage supplémentaire pour améliorer la compréhension des étudiants.",
+          reference: "Référence professionelle disponible",
         },
       ],
     },

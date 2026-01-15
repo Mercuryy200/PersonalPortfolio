@@ -1,31 +1,57 @@
-import { Card, CardBody, Divider } from "@heroui/react";
+"use client";
+import { motion } from "framer-motion";
 
-type ExperienceItem = {
-  position: string;
-  description: string;
-  duration: string;
-  company: string;
-};
+interface InfoProps {
+  items: Array<{
+    position: string;
+    description: string;
+    duration: string;
+    company: string;
+    reference: string;
+  }>;
+}
 
-type InfoProps = {
-  viewMore: string;
-  items: ExperienceItem[];
-};
-
-export default function Info({ viewMore, items }: InfoProps) {
+export default function Info({ items }: InfoProps) {
   return (
-    <Card className="max-w-md mx-auto my-10 shadow-lg rounded-2xl p-4 glassBackground">
-      <CardBody className="space-y-6">
-        {items.map((item, index) => (
-          <div key={index}>
-            <h3 className="text-lg font-semibold">{item.position}</h3>
-            <p className="text-sm italic">{item.company}</p>
-            <p className="text-xs mb-2">{item.duration}</p>
-            <p className="text-sm">{item.description}</p>
-            {index < items.length - 1 && <Divider className="my-4" />}
+    <div className="w-full space-y-16">
+      {items.map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          className="group relative grid grid-cols-1 md:grid-cols-12 gap-4 pb-12 border-b border-gold/20 last:border-none"
+        >
+          <div className="md:col-span-3 flex flex-col pt-1">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-coffee">
+              {item.duration}
+            </span>
           </div>
-        ))}
-      </CardBody>
-    </Card>
+
+          <div className="md:col-span-9 space-y-4">
+            <div className="space-y-1">
+              <h3 className="text-3xl font-serif italic text-coffee group-hover:text-cartier transition-colors duration-500">
+                {item.position}
+              </h3>
+              <p className="text-xs font-bold text-cartier uppercase tracking-widest">
+                {item.company}
+              </p>
+            </div>
+
+            <p className="text-coffee/70 leading-relaxed max-w-2xl font-medium text-sm md:text-base">
+              {item.description}
+            </p>
+
+            <div className="flex gap-4 pt-2">
+              <div className="h-px w-8 bg-gold/40 self-center" />
+              <span className="text-[10px] italic text-gold font-semibold uppercase tracking-wider">
+                {item.reference}
+              </span>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
   );
 }
