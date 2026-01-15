@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 
 interface InfoProps {
+  viewMore: string;
   items: Array<{
     position: string;
     description: string;

@@ -13,6 +13,7 @@ interface ExperienceProp {
       description: string;
       duration: string;
       company: string;
+      reference: string;
     }>;
   };
   language: Language;
@@ -40,7 +41,7 @@ export default function Experience({ t, language }: ExperienceProp) {
         transition={{ duration: 0.6, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <Info viewMore={t.viewMore} items={t.items} />
+        <Info items={t.items} />
         <div className="pt-8">
           <ResumeDownload language={language} />
         </div>
