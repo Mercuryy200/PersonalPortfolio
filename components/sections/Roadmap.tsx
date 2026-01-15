@@ -38,7 +38,7 @@ export default function Roadmap({ t }: RoadmapProps) {
         <h2 className="text-5xl md:text-7xl font-serif italic text-coffee">
           {t.title}
         </h2>
-        <div className="h-1.5 w-32 bg-cartier mx-auto" />
+        <div className="h-1 w-24 bg-cartier mx-auto" />
       </motion.div>
 
       <div className="max-w-4xl mx-auto relative">

@@ -1,5 +1,4 @@
 "use client";
-
 import Snowfall from "react-snowfall";
 
 export default function SnowfallWrapper() {
@@ -12,10 +11,17 @@ export default function SnowfallWrapper() {
         width: "100%",
         height: "100%",
         pointerEvents: "none",
-        zIndex: 9999,
+        zIndex: 50,
       }}
     >
-      <Snowfall snowflakeCount={150} speed={[0.5, 1.5]} wind={[-0.5, 1.0]} />
+      <Snowfall
+        color="#d4c3a3"
+        snowflakeCount={120}
+        radius={[0.5, 1.5]}
+        speed={[0.2, 0.8]}
+        wind={[-0.5, 1.0]}
+        opacity={[0.2, 0.6]}
+      />
     </div>
   );
 }
