@@ -14,7 +14,7 @@ interface AccordionProps {
 export default function AboutMeAccordion({ t }: AccordionProps) {
   // Designer choice: Minimalist item classes to match the "Quiet Luxury" aesthetic
   const itemClasses = {
-    base: "py-2 w-full border-b border-sandGold/30 last:border-none",
+    base: "py-2 w-full border-b border-gold/30 last:border-none",
     title:
       "font-serif italic text-xl md:text-2xl text-coffee group-data-[open=true]:text-cartier transition-colors duration-300",
     trigger:
@@ -25,7 +25,7 @@ export default function AboutMeAccordion({ t }: AccordionProps) {
   };
 
   return (
-    <div className="w-full bg-almond/30 border-t border-sandGold/30">
+    <div className="w-full bg-almond/30 border-t border-gold/30">
       <Accordion
         variant="light"
         selectionMode="single"

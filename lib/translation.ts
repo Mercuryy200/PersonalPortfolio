@@ -176,6 +176,35 @@ export const translations = {
       submit: "Submit",
       reset: "Reset",
     },
+    roadmap: {
+      title: "Technical Journey",
+      milestones: [
+        {
+          status: "completed",
+          date: "MAY 2026",
+          title: "Diploma in IT Programs",
+          institution: "Collège Ahuntsic",
+          description:
+            "Culmination of intensive training in full-stack web development, mobile applications (Swift/Kotlin), and systems analysis. Built strong foundations in programming logic and database management.",
+        },
+        {
+          status: "active",
+          date: "MARCH – AUGUST 2026",
+          title: "Seeking Internship",
+          institution: "Web / Mobile / Tools Programming",
+          description:
+            "Available for a 6-month internship to apply skills in a professional setting. Eager to contribute to dynamic teams, particularly in roles involving React, Unity, or iOS development.",
+        },
+        {
+          status: "future",
+          date: "FALL 2026",
+          title: "BEng in Software Engineering",
+          institution: "Concordia University",
+          description:
+            "Beginning advanced studies to deepen theoretical knowledge in software architecture, algorithms, and large-scale system design, building upon the practical skills gained at Ahuntsic.",
+        },
+      ],
+    },
   },
   fr: {
     nav: {
@@ -353,6 +382,35 @@ export const translations = {
       },
       submit: "Soumettre",
       reset: "Refaire",
+    },
+    roadmap: {
+      title: "Parcours Technique",
+      milestones: [
+        {
+          status: "completed",
+          date: "MAI 2026",
+          title: "Diplôme d'études collégiales (DEC)",
+          institution: "Collège Ahuntsic",
+          description:
+            "Achèvement d'une formation technique intensive spécialisée en programmation web full-stack, applications mobiles (Swift/Kotlin) et analyse de systèmes. Consolidation des bases en logique algorithmique et gestion de bases de données.",
+        },
+        {
+          status: "active",
+          date: "MARS – AOÛT 2026",
+          title: "Recherche de Stage",
+          institution: "Dév. Web / Mobile / Outils",
+          description:
+            "Disponibilité immédiate pour un stage de 4 à 6 mois. Objectif : appliquer mes compétences en React, Unity et Swift au sein d'une équipe de développement dynamique tout en contribuant à des projets d'envergure.",
+        },
+        {
+          status: "future",
+          date: "AUTOMNE 2026",
+          title: "Baccalauréat en Génie Logiciel",
+          institution: "Université Concordia",
+          description:
+            "Début des études supérieures pour approfondir les connaissances théoriques en architecture logicielle, algorithmes complexes et conception de systèmes à grande échelle, en s'appuyant sur les compétences pratiques acquises à Ahuntsic.",
+        },
+      ],
     },
   },
 };

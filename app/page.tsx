@@ -11,9 +11,9 @@ import { Divider } from "@heroui/react";
 import { useState } from "react";
 import { translations, Language } from "@/lib/translation";
 import { HeroUIProvider } from "@heroui/react";
-import * as React from "react";
 import SnowfallWrapper from "@/components/ui/SnowFallWrapper";
 import "./globals.css";
+import Roadmap, { Milestone } from "@/components/sections/Roadmap";
 
 export default function Home() {
   const [language, setLanguage] = useState<Language>("en");
@@ -33,6 +33,13 @@ export default function Home() {
         <Experience t={t.experience} language={language} />
         <Divider />
         <About t={t.about} />
+        <Divider />
+        <Roadmap
+          t={{
+            title: t.roadmap.title,
+            milestones: t.roadmap.milestones as unknown as Milestone[],
+          }}
+        />{" "}
         <Divider />
         <Contact t={t.contact} />
         <Divider />

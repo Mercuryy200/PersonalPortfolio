@@ -2,9 +2,9 @@ import { Montserrat } from "next/font/google";
 import { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 import "./globals.css";
-import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
   title: {

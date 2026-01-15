@@ -56,13 +56,13 @@ export default function Skills({ t }: SkillsProp) {
         {skillCategories.map((category, idx) => (
           <motion.div
             key={idx}
-            className="flex flex-col bg-almond/40 p-8 rounded-none border border-sandGold/30 hover:border-cartier/30 transition-all duration-500"
+            className="flex flex-col bg-almond/40 p-8 rounded-none border border-gold/30 hover:border-cartier/30 transition-all duration-500"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={containerVariants}
           >
-            <h3 className="text-xs font-black uppercase tracking-[0.3em] mb-8 text-coffee/60 border-b border-sandGold/20 pb-2">
+            <h3 className="text-xs font-black uppercase tracking-[0.3em] mb-8 text-coffee/60 border-b border-gold/20 pb-2">
               {category.title}
             </h3>
 

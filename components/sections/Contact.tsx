@@ -92,7 +92,7 @@ export default function Contact({ t }: any) {
       >
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-almond/30 border border-sandGold/30 p-10 md:p-16 space-y-16"
+          className="bg-almond/30 border border-gold/30 p-10 md:p-16 space-y-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
             <div className="relative group">

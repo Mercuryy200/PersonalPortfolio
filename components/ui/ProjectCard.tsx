@@ -34,7 +34,7 @@ export default function ProjectCard({
 
   return (
     <Card
-      className="glassBackground bg-almond/50 h-full border border-sandGold/30 shadow-none hover:border-cartier/40 transition-all duration-500 group"
+      className="glassBackground bg-almond/50 h-full border border-gold/30 shadow-none hover:border-cartier/40 transition-all duration-500 group"
       isPressable={!!url}
       onPress={() => {
         if (url) window.open(url, "_blank");
@@ -48,12 +48,11 @@ export default function ProjectCard({
           {url && (
             <ExternalLink
               size={18}
-              className="text-sandGold opacity-0 group-hover:opacity-100 transition-opacity"
+              className="text-gold opacity-0 group-hover:opacity-100 transition-opacity"
             />
           )}
         </div>
 
-        {/* Technology Badges */}
         <div className="flex flex-wrap gap-1.5 mt-3">
           {techList.map((tech) => (
             <Chip
@@ -86,10 +85,10 @@ export default function ProjectCard({
         </ul>
       </CardBody>
 
-      <Divider className="bg-sandGold/20 mx-6 w-auto" />
+      <Divider className="bg-gold/20 mx-6 w-auto" />
 
       <CardFooter className="px-6 py-4 flex justify-between items-center">
-        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-sandGold opacity-60">
+        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-gold opacity-60">
           Source Code
         </span>
         <Button
