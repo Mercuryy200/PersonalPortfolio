@@ -16,7 +16,7 @@ export default function About({ t }: AboutProps) {
   return (
     <section
       id="about"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-almondBeige overflow-hidden"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-almond overflow-hidden"
     >
       <motion.div
         className="mb-16 space-y-4"
@@ -27,7 +27,7 @@ export default function About({ t }: AboutProps) {
         <h2 className="text-5xl md:text-7xl font-serif italic text-center">
           {t.title}
         </h2>
-        <div className="h-1.5 w-32 bg-cartierRed" />
+        <div className="h-1 w-24 bg-cartier mx-auto" />
       </motion.div>
 
       <motion.div

@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
   title: {
@@ -37,6 +38,7 @@ export default function RootLayout({
         {children}
         <SpeedInsights />
         <Analytics />
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -39,10 +39,7 @@ export default function Skills({ t }: SkillsProp) {
   ];
 
   return (
-    <section
-      id="skills"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-almondBeige"
-    >
+    <section id="skills" className="py-24 px-6 md:px-12 lg:px-24 bg-almond">
       <motion.div
         className="mb-16 space-y-4"
         initial={{ opacity: 0, x: -50 }}
@@ -52,20 +49,20 @@ export default function Skills({ t }: SkillsProp) {
         <h2 className="text-5xl md:text-7xl text-center font-serif italic">
           {t.title}
         </h2>
-        <div className="h-1.5 w-32 bg-cartierRed" />
+        <div className="h-1 w-24 bg-cartier mx-auto" />
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {skillCategories.map((category, idx) => (
           <motion.div
             key={idx}
-            className="flex flex-col bg-almondBeige/40 p-8 rounded-none border border-sandGold/30 hover:border-cartierRed/30 transition-all duration-500"
+            className="flex flex-col bg-almond/40 p-8 rounded-none border border-sandGold/30 hover:border-cartier/30 transition-all duration-500"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={containerVariants}
           >
-            <h3 className="text-xs font-black uppercase tracking-[0.3em] mb-8 text-coffeeBean/60 border-b border-sandGold/20 pb-2">
+            <h3 className="text-xs font-black uppercase tracking-[0.3em] mb-8 text-coffee/60 border-b border-sandGold/20 pb-2">
               {category.title}
             </h3>
 
@@ -75,7 +72,7 @@ export default function Skills({ t }: SkillsProp) {
                   <Chip
                     size="sm"
                     variant="flat"
-                    className="bg-cartierRed/5 p-3 text-cartierRed border border-cartierRed/10 text-[10px] font-bold uppercase tracking-wider rounded-full"
+                    className="bg-cartier/5 p-3 text-cartier border border-cartier/10 text-[10px] font-bold uppercase tracking-wider rounded-full"
                   >
                     {skill}
                   </Chip>

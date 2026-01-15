@@ -14,7 +14,7 @@ export default function Footer({ t }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-coffeeBean text-almondBeige py-12 px-6 md:px-24 border-t border-sandGold/20">
+    <footer className="w-full text-coffee py-12 px-6 md:px-24 border-t border-sandGold/20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex flex-col items-center md:items-start space-y-2">
           <p className="font-serif italic text-2xl tracking-tight">
@@ -25,8 +25,8 @@ export default function Footer({ t }: FooterProps) {
           </p>
         </div>
 
-        <div className="flex items-center gap-3 px-5 py-2 border border-sandGold/30 rounded-full bg-white/5">
-          <span className="text-[11px] font-bold uppercase tracking-widest">
+        <div className="flex items-center gap-3 px-5 py-2 border border-gold/30 rounded-full bg-cartier">
+          <span className="text-[11px] font-bold uppercase text-gold tracking-widest">
             {t.badge}
           </span>
         </div>
@@ -49,7 +49,7 @@ export default function Footer({ t }: FooterProps) {
               href={social.href}
               target="_blank"
               aria-label={social.label}
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-almondBeige/20 hover:bg-cartierRed hover:border-cartierRed transition-all duration-500"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-coffee/20 hover:text-cartier hover:border-cartier transition-all duration-500"
             >
               <FontAwesomeIcon icon={social.icon} />
             </Link>

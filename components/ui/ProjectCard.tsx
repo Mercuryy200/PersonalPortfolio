@@ -42,7 +42,7 @@ export default function ProjectCard({
     >
       <CardHeader className="flex-col items-start px-6 pt-6 pb-2">
         <div className="flex justify-between w-full items-start">
-          <h4 className="font-serif italic text-2xl text-coffeeBean group-hover:text-cartier transition-colors duration-300">
+          <h4 className="font-serif italic text-2xl text-coffee group-hover:text-cartier transition-colors duration-300">
             {title}
           </h4>
           {url && (
@@ -69,7 +69,7 @@ export default function ProjectCard({
       </CardHeader>
 
       <CardBody className="px-6 py-4 overflow-hidden">
-        <p className="text-sm text-coffeeBean/80 leading-relaxed mb-4 line-clamp-3">
+        <p className="text-sm text-coffee/80 leading-relaxed mb-4 line-clamp-3">
           {description}
         </p>
 
@@ -77,7 +77,7 @@ export default function ProjectCard({
           {features.slice(0, 3).map((feature, index) => (
             <li
               key={index}
-              className="flex items-start gap-2 text-xs text-coffeeBean/70"
+              className="flex items-start gap-2 text-xs text-coffee/70"
             >
               <span className="text-cartier mt-1">•</span>
               {feature}
@@ -98,7 +98,7 @@ export default function ProjectCard({
           target="_blank"
           rel="noopener noreferrer"
           variant="light"
-          className="rounded-full border border-coffeeBean/20 text-coffeeBean hover:bg-cartier hover:text-almond hover:border-cartier transition-all duration-300"
+          className="rounded-full border border-coffee/20 text-coffee hover:bg-cartier hover:text-almond hover:border-cartier transition-all duration-300"
           isIconOnly
         >
           <FontAwesomeIcon icon={faGithub} className="text-lg" />

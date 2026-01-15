@@ -44,6 +44,7 @@ export default function Projects({ t }: ProjectsProp) {
         <h2 className="text-5xl md:text-7xl font-serif italic text-center">
           {t.title}
         </h2>
+        <div className="h-1 w-24 bg-cartier mx-auto" />
       </motion.div>
 
       <motion.div
@@ -54,8 +55,7 @@ export default function Projects({ t }: ProjectsProp) {
         viewport={{ once: true }}
       >
         {projects.map((project, index) => {
-          // Designer logic: Make specific projects span more columns for visual interest
-          const isLarge = index === 0 || index === 1; // Highlight the first two (Portfolio & Closet Manager)
+          const isLarge = index === 0 || index === 1;
 
           return (
             <motion.div

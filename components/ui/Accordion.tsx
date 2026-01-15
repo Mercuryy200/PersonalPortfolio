@@ -16,16 +16,16 @@ export default function AboutMeAccordion({ t }: AccordionProps) {
   const itemClasses = {
     base: "py-2 w-full border-b border-sandGold/30 last:border-none",
     title:
-      "font-serif italic text-xl md:text-2xl text-coffeeBean group-data-[open=true]:text-cartierRed transition-colors duration-300",
+      "font-serif italic text-xl md:text-2xl text-coffee group-data-[open=true]:text-cartier transition-colors duration-300",
     trigger:
-      "px-4 py-6 data-[hover=true]:bg-cartierRed/5 rounded-none h-auto flex items-center transition-all duration-300",
-    indicator: "text-cartierRed transition-transform duration-500",
+      "px-4 py-6 data-[hover=true]:bg-cartier/5 rounded-none h-auto flex items-center transition-all duration-300",
+    indicator: "text-cartier transition-transform duration-500",
     content:
-      "text-base leading-relaxed text-coffeeBean/80 px-4 pb-6 pt-2 font-medium",
+      "text-base leading-relaxed text-coffee/80 px-4 pb-6 pt-2 font-medium",
   };
 
   return (
-    <div className="w-full bg-almondBeige/30 border-t border-sandGold/30">
+    <div className="w-full bg-almond/30 border-t border-sandGold/30">
       <Accordion
         variant="light"
         selectionMode="single"

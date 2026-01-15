@@ -20,10 +20,7 @@ interface ExperienceProp {
 
 export default function Experience({ t, language }: ExperienceProp) {
   return (
-    <section
-      id="experience"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-almondBeige"
-    >
+    <section id="experience" className="py-24 px-6 md:px-12 lg:px-24 bg-almond">
       <motion.div
         className="mb-16 text-center space-y-4"
         initial={{ opacity: 0, y: 30 }}
@@ -33,7 +30,7 @@ export default function Experience({ t, language }: ExperienceProp) {
         <h2 className="text-5xl md:text-7xl font-serif italic text-center">
           {t.title}
         </h2>
-        <div className="h-1 w-24 bg-cartierRed mx-auto" />
+        <div className="h-1 w-24 bg-cartier mx-auto" />
       </motion.div>
 
       <motion.div

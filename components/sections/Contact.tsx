@@ -28,7 +28,6 @@ export default function Contact({ t }: any) {
 
   const onSubmit = async (values: ContactFormData) => {
     try {
-      // Construction of dynamic HTML content
       const mailHtml = `
         <div style="font-family: serif; max-width: 600px; color: #3C2A21;">
           <h2 style="color: #A02021; border-bottom: 1px solid #D4C3A3; padding-bottom: 10px;">
@@ -48,7 +47,7 @@ export default function Contact({ t }: any) {
         email: values.email,
         subject: `Inquiry from ${values.name}`,
         text: `Name: ${values.name}\nEmail: ${values.email}\nMessage: ${values.message}`,
-        html: mailHtml, // Now using the dynamic variable instead of a hardcoded string
+        html: mailHtml,
       });
 
       if (response?.success) {
@@ -63,14 +62,14 @@ export default function Contact({ t }: any) {
   };
 
   const labelStyle =
-    "block text-[10px] font-black uppercase text-cartier tracking-[0.3em] text-coffeeBean mb-4";
+    "block text-[10px] font-black uppercase tracking-[0.3em] text-cartier mb-4";
   const inputStyle =
-    "w-full bg-transparent py-3 text-lg text-coffeeBean outline-none transition-colors duration-300 placeholder:text-coffeeBean/20";
+    "w-full bg-transparent py-3 text-lg text-coffee outline-none transition-colors duration-300 placeholder:text-coffee/20";
 
   return (
     <section
       id="contact"
-      className="py-24 px-6 md:px-12 lg:px-24 bg-almondBeige min-h-screen flex flex-col items-center"
+      className="py-24 px-6 md:px-12 lg:px-24 bg-almond min-h-screen flex flex-col items-center"
     >
       <motion.div
         className="mb-20 text-center space-y-4"
@@ -78,9 +77,10 @@ export default function Contact({ t }: any) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-5xl md:text-7xl font-serif italic text-coffeeBean">
+        <h2 className="text-5xl md:text-7xl font-serif italic text-coffee">
           {t.title}
         </h2>
+        <div className="h-1 w-24 bg-cartier mx-auto" />
       </motion.div>
 
       <motion.div
@@ -92,7 +92,7 @@ export default function Contact({ t }: any) {
       >
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-almondBeige/30 border border-sandGold/30 p-10 md:p-16 space-y-16"
+          className="bg-almond/30 border border-sandGold/30 p-10 md:p-16 space-y-16"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
             <div className="relative group">
@@ -162,7 +162,7 @@ export default function Contact({ t }: any) {
             <button
               type="button"
               onClick={() => reset()}
-              className="px-16 py-5 border border-coffeeBean/20 text-coffeeBean rounded-full font-bold text-lg hover:bg-coffeeBean/5 transition-all duration-500"
+              className="px-16 py-5 border border-coffee/20 text-coffee rounded-full font-bold text-lg hover:bg-coffee/5 transition-all duration-500"
             >
               {t.reset}
             </button>

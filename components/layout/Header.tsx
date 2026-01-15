@@ -78,7 +78,7 @@ export default function Header({ t, language, setLanguage }: Props) {
               key={item.name}
               href={item.href}
               onClick={handleLinkClick}
-              className="block rounded-md px-3 py-2 text-base font-medium text-coffeeBean hover:bg-cartier hover:text-white transition-colors"
+              className="block rounded-md px-3 py-2 text-base font-medium text-coffee hover:bg-cartier hover:text-white transition-colors"
             >
               {item.name}
             </Link>
