@@ -8,9 +8,13 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
+      badge: "Available for Internships: March – Aug 2026",
       intro: "Hi, I am",
       description:
-        "  Welcome! I have been building this website in order to showcase my abilities as a software developer. Feel free to explore and learn more about me.",
+        "Welcome! I build seamless digital experiences specializing in web and mobile development. Explore my projects to see how I combine technical logic with creative design.",
+      ctaProjects: "View Projects",
+      ctaResume: "Download Resume",
+      scroll: "Scroll",
     },
     about: {
       title: "About Me",
@@ -180,6 +184,15 @@ export const translations = {
       projects: "Projets",
       contact: "Contactez-moi",
     },
+    hero: {
+      badge: "Disponible pour stages : Mars – Août 2026",
+      intro: "Bonjour, je suis",
+      description:
+        "Bienvenue! Je crée des expériences numériques fluides spécialisées dans le développement web et mobile. Explorez mes projets pour voir comment je combine logique technique et design créatif.",
+      ctaProjects: "Voir mes projets",
+      ctaResume: "Télécharger le CV",
+      scroll: "Défiler",
+    },
     about: {
       title: "À Propos de Moi",
       accordion1: {
@@ -202,11 +215,6 @@ export const translations = {
         content:
           "Quand je ne code pas, vous me trouverez à la salle de sport ou en train de me lancer le défi d'apprendre de nouvelles langues - je crois en l'expansion constante de mes compétences tant dans le monde de la technologie qu'en dehors. Ce qui me motive le plus en tant que développeur, c'est la nature incrémentale de la construction de logiciels. Je suis fasciné non seulement par le produit final, mais par tout le parcours - chaque commit, chaque percée et chaque leçon apprise en cours de route. Voir jusqu'où je suis allé depuis cette première construction de PC jusqu'au développement d'applications full-stack me rappelle pourquoi je suis tombé amoureux de la technologie en premier lieu. Actuellement, je suis toujours désireux de relever de nouveaux défis et de collaborer sur des projets qui me poussent à grandir en tant que développeur.",
       },
-    },
-    hero: {
-      intro: "Bonjour, je suis",
-      description:
-        " Bienvenue! J'ai construit ce site web afin de mettre en valeur mes compétences en tant que développeur logiciel. N'hésitez pas à explorer et à en apprendre davantage sur moi.",
     },
     skills: {
       title: "Compétences",

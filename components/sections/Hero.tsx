@@ -1,60 +1,133 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { ArrowRight } from "lucide-react";
+import { Language } from "@/lib/translation";
+import ResumeDownload from "@/components/ui/ResumeDownload";
+
 interface HeroProps {
   t: {
-    description: string;
+    badge: string;
     intro: string;
+    description: string;
+    ctaProjects: string;
+    ctaResume: string;
+    scroll: string;
   };
+  language: Language;
 }
-export default function Hero({ t }: HeroProps) {
+
+export default function Hero({ t, language }: HeroProps) {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <div
       id="hero"
-      className="flex flex-col justify-center min-h-screen items-center p-20"
+      className="relative flex flex-col justify-center min-h-screen items-center p-6 lg:p-20 overflow-hidden"
     >
-      <motion.h1
-        className="text-5xl"
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        {t.intro}{" "}
-        <span className="text-coffeBean font-bold font-serif">
-          Rima Nafougui
-        </span>
-      </motion.h1>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40vw] h-[40vw] bg-coffeBean/10 rounded-full blur-[100px] -z-10" />
 
-      <motion.h2
-        className="text-xl mt-4"
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        viewport={{ once: true }}
+      <motion.div
+        className="flex flex-col items-center text-center max-w-4xl"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
       >
-        {t.description}
-        <div id="social-Links" className="flex gap-2 mt-6 justify-center">
+        <motion.h1
+          variants={itemVariants}
+          className="text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight"
+        >
+          {t.intro}{" "}
+          <span className="text-coffeBean font-bold font-serif italic block mt-2">
+            Rima Nafougui
+          </span>
+        </motion.h1>
+
+        <motion.p
+          variants={itemVariants}
+          className="text-lg md:text-xl mt-8 max-w-2xl leading-relaxed text-coffeBean/80 font-medium"
+        >
+          {t.description}
+        </motion.p>
+
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-wrap gap-4 mt-10 justify-center items-center"
+        >
           <Link
-            href="https://github.com/Mercuryy200"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" hover:text-gray-800  hover:scale-110 transition-transform duration-300"
+            href="#projects"
+            className="flex items-center gap-2 bg-coffeBean text-almond px-8 py-3.5 rounded-full font-bold hover:shadow-xl hover:-translate-y-1 transition-all duration-300 active:scale-95"
           >
-            <FontAwesomeIcon icon={faGithub} size="2x" />
+            {t.ctaProjects}
+            <ArrowRight size={20} />
           </Link>
-          <Link
-            href="https://www.linkedin.com/in/rima-nafougui-b0434b295"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" hover:text-gray-800 hover:scale-110 transition-transform duration-300"
-          >
-            <FontAwesomeIcon icon={faLinkedin} size="2x" />
-          </Link>
+          <ResumeDownload language={language} />
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          className="flex gap-4 mt-12 justify-center"
+        >
+          {[
+            {
+              icon: faGithub,
+              href: "https://github.com/Mercuryy200",
+              label: "GitHub",
+            },
+            {
+              icon: faLinkedin,
+              href: "https://www.linkedin.com/in/rima-nafougui",
+              label: "LinkedIn",
+            },
+          ].map((social, i) => (
+            <Link
+              key={i}
+              href={social.href}
+              target="_blank"
+              aria-label={social.label}
+              className="flex items-center justify-center w-14 h-14 rounded-full border border-coffeBean/20 text-coffeBean hover:bg-coffeBean hover:text-almond hover:scale-110 transition-all duration-300 shadow-sm"
+            >
+              <FontAwesomeIcon icon={social.icon} size="lg" />
+            </Link>
+          ))}
+        </motion.div>
+      </motion.div>
+
+      {/* Modern Animated Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-40"
+      >
+        <span className="text-[10px] uppercase tracking-[0.2em] font-black">
+          {t.scroll}
+        </span>
+        <div className="w-[1px] h-12 bg-coffeBean/30 relative overflow-hidden">
+          <motion.div
+            animate={{ y: [0, 48, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 w-full h-1/2 bg-coffeBean"
+          />
         </div>
-      </motion.h2>
+      </motion.div>
     </div>
   );
 }

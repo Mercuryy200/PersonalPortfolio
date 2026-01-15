@@ -24,7 +24,7 @@ export default function Home() {
       <HeroUIProvider>
         <SnowfallWrapper />
         <Header t={t} language={language} setLanguage={setLanguage} />
-        <Hero t={t.hero} />
+        <Hero t={t.hero} language={language} />
         <Divider />
         <Projects t={t.projects} />
         <Divider />

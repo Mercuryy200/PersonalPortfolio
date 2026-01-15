@@ -26,7 +26,7 @@ export default function Header({ t, language, setLanguage }: Props) {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-almond z-50">
+    <nav className="fixed top-0 w-full bg-almond/70 backdrop-blur-md z-50 border-b border-coffeBean/10">
       <div className=" sm:p-4 ">
         <div className="relative flex h-20 w-full items-center justify-between">
           <Link href="/" className="flex-shrink-0">
@@ -65,7 +65,6 @@ export default function Header({ t, language, setLanguage }: Props) {
           </div>
         </div>
       </div>
-
       <div
         className={`lg:hidden transition-all duration-300 ease-in-out ${
           isMenuOpen

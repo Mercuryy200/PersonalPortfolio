@@ -1,3 +1,4 @@
+"use client";
 import { Download } from "lucide-react";
 import { Language } from "@/lib/translation";
 
@@ -28,10 +29,17 @@ export default function ResumeDownload({ language }: ResumeDownloadProps) {
   return (
     <button
       onClick={handleDownloadResume}
-      className="flex items-center gap-2 px-6 py-3 bg-coffeBean text-almond font-semibold rounded-lg hover:opacity-90 transition-opacity duration-200 shadow-md hover:shadow-lg"
+      className="group relative flex items-center gap-2 px-8 py-3.5 border-2 border-coffeBean text-coffeBean font-bold rounded-full overflow-hidden transition-all duration-300 hover:text-almond active:scale-95 cursor-pointer shadow-sm hover:shadow-md"
     >
-      <Download size={20} />
-      {buttonText}
+      <span className="absolute inset-0 bg-coffeBean translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0" />
+
+      <span className="relative z-10 flex items-center gap-2">
+        <Download
+          size={18}
+          className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110"
+        />
+        {buttonText}
+      </span>
     </button>
   );
 }
