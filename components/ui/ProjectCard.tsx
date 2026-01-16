@@ -29,7 +29,6 @@ export default function ProjectCard({
   github,
   url,
 }: ProjectCardProps) {
-  // Split technologies string into an array for cleaner tagging
   const techList = technologies.split(",").map((tech) => tech.trim());
 
   return (
