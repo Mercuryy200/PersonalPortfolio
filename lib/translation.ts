@@ -68,7 +68,7 @@ export const translations = {
           technologies:
             "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel, Nodemailer",
           github: "https://github.com/Mercuryy200/PersonalPortfolio",
-          url: "https://rimanafougui.vercel.app",
+          url: "https://rimanafougui.com",
         },
         project2: {
           title: "Smart Closet Manager",
@@ -87,7 +87,7 @@ export const translations = {
           technologies:
             "Next.js 15, TypeScript, Prisma ORM, PostgreSQL, NextAuth.js, Hero UI, Tailwind CSS, bcrypt",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
-          url: "https://closet-organizer-rima-nafougui.vercel.app",
+          url: "https://vesticloset.vercel.app",
         },
         project3: {
           title: "Fruit Basket Game",
@@ -278,7 +278,7 @@ export const translations = {
           technologies:
             "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel, Nodemailer",
           github: "https://github.com/Mercuryy200/PersonalPortfolio",
-          url: "https://rimanafougui.vercel.app",
+          url: "https://rimanafougui.com",
         },
         project2: {
           title: "Gestionnaire de Garde-robe Intelligent",
@@ -297,7 +297,7 @@ export const translations = {
           technologies:
             "Next.js 15, TypeScript, Prisma ORM, PostgreSQL, NextAuth.js, Hero UI, Tailwind CSS, bcrypt",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
-          url: "https://closet-organizer-rima-nafougui.vercel.app",
+          url: "https://vesticloset.vercel.app",
         },
         project3: {
           title: "Jeu Panier de Fruits",
