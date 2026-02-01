@@ -12,7 +12,7 @@ export const translations = {
       badge: "Available for Internships: March – Aug 2026",
       intro: "Hi, I am",
       description:
-        "Welcome! I build seamless digital experiences specializing in web and mobile development. Explore my projects to see how I combine technical logic with creative design.",
+        "Welcome! I am a full-stack developer with a passion for Data Engineering and AI. I build scalable web applications and automated data pipelines, combining technical logic with modern system architecture.",
       ctaProjects: "View Projects",
       ctaResume: "Download Resume",
       scroll: "Scroll",
@@ -20,24 +20,24 @@ export const translations = {
     about: {
       title: "About Me",
       accordion1: {
-        title: "BackGround & Education",
+        title: "Background & Education",
         content:
-          " Hi, I'm a passionate software development student currently enrolledin the technical program at Ahuntsic College in Montreal. I'm on track to pursue Software Engineering starting Fall 2026, combining my love for technology with formal education to build a strong foundation in development.",
+          "Hi, I'm a software development student graduating from Collège Ahuntsic in May 2026. I am also an incoming Software Engineering student at Concordia University (Fall 2026). I combine formal technical training with self-driven learning in AI and Data Engineering.",
       },
       accordion2: {
         title: "Journey",
         content:
-          'My journey into tech began in 2020 when I built my first PC. What started as a hands-on project quickly evolved into an insatiable curiosity about how technology works under the hood. I found myself diving deep into understanding the mechanisms behind the tools and systems we use every day, always asking "but how does it actually work?"',
+          "My journey began in 2020 by building my first PC, which sparked a curiosity about how systems work under the hood. This evolved from hardware to software, leading me to explore full-stack development and, more recently, the complexities of data pipelines and machine learning architectures.",
       },
       accordion3: {
         title: "Passion",
         content:
-          "Software development has become the perfect intersection of my interests—allowing me to blend my creative side through frontend development with my analytical and logical nature in backend work. There's something deeply satisfying about crafting an intuitive user interface while simultaneously architecting the robust systems that power it.",
+          "I sit at the intersection of creative frontend work and analytical backend logic. I enjoy crafting intuitive user interfaces with Next.js while simultaneously architecting robust data systems using Python, SQL, and Vector Databases.",
       },
       accordion4: {
         title: "What Drives Me",
         content:
-          "When I'm not coding, you'll find me at the gym or challenging myself to learn new languages—I believe in constantly expanding my skillset both in and out of the tech world. What drives me most as a developer is the incremental nature of building software. I'm fascinated not just by the final product, but by the entire journey—each commit, each breakthrough, and each lesson learned along the way. Seeing how far I've come from that first PC build to developing full-stack applications reminds me why I fell in love with technology in the first place. Currently, I'm always eager to take on new challenges and collaborate on projects that push me to grow as a developer.",
+          "Beyond coding, I'm constantly learning—whether it's new spoken languages or new tech stacks like RAG (Retrieval-Augmented Generation). I am driven by the engineering challenge of optimizing performance, automating workflows, and building software that solves real-world problems.",
       },
     },
     skills: {
@@ -54,45 +54,43 @@ export const translations = {
       title: "Projects",
       items: {
         project1: {
-          title: "Personal Portfolio",
+          title: "ArXiv RAG Research Assistant",
           description:
-            "My personal portfolio, built with Next.js and Tailwind CSS, showcases my web development skills. It features my projects, skills, and experiences, offering a modern and responsive user interface. Explore it to learn more about my journey as a developer.",
+            "An automated AI pipeline that scrapes research papers and allows users to 'chat' with them. It uses a Retrieval-Augmented Generation (RAG) architecture to provide accurate, cited answers from technical documents.",
           features: [
-            "Built with Next.js for optimal performance.",
-            "Responsive design using Tailwind CSS.",
-            "Showcases projects and skills.",
-            "Framer Motion integration for smooth animations.",
-            "Vector icons with FontAwesome.",
-            "Easy deployment via Vercel.",
+            "Automated ETL pipeline via GitHub Actions (Weekly scraping).",
+            "Vector Embeddings generation using 'sentence-transformers'.",
+            "Semantic Search utilizing Supabase and pgvector.",
+            "Generative AI integration with Google Gemini Pro LLM.",
+            "Streamlit frontend with sub-second response caching.",
+            "Self-healing architecture handling unstructured PDF data.",
           ],
           technologies:
-            "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel, Nodemailer",
-          github: "https://github.com/Mercuryy200/PersonalPortfolio",
-          url: "https://rimanafougui.com",
+            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit, Pandas",
+          github: "https://github.com/Mercuryy200/arxiv-search-engine",
+          url: "https://arxiv-search-app.streamlit.app",
         },
         project2: {
-          title: "Smart Closet Manager",
+          title: "RCapsule - Smart Closet Manager",
           description:
-            "A full-stack wardrobe management application built with Next.js and Supabase. It allows users to digitally organize their clothing items, track purchases, and plan outfits. Features secure authentication, image storage, and a responsive interface for managing your entire wardrobe in one place.",
+            "A full-stack wardrobe management app featuring AI-powered outfit recommendations. It combines secure authentication, real-time database interactions, and weather-based logic to help users organize their closet efficiently.",
           features: [
-            "Secure user authentication with NextAuth.js (GitHub & Credentials).",
-            "Full CRUD operations for clothing items with real-time updates.",
-            "Multi-select categorization (colors, occasions, seasons).",
-            "Image URL support for visual wardrobe representation.",
-            "Price tracking and purchase history.",
-            "Responsive card-based layout with Hero UI components.",
-            "PostgreSQL database with Supabase",
-            "Protected routes with middleware authentication with NextAuth.js.",
+            "AI Outfit Recommendations using OpenAI API & OpenWeatherMap.",
+            "Secure authentication with NextAuth.js (GitHub & Credentials).",
+            "Real-time database operations via Supabase (PostgreSQL).",
+            "Responsive card-based layout with image storage.",
+            "Price tracking and purchase history analytics.",
+            "Optimized performance with protected middleware routes.",
           ],
           technologies:
-            "Next.js 15, TypeScript, Prisma ORM, PostgreSQL, NextAuth.js, Hero UI, Tailwind CSS, bcrypt",
+            "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, NextAuth.js, Tailwind CSS",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
-          url: "https://vesticloset.vercel.app",
+          url: "https://rcapsule.com",
         },
         project3: {
           title: "Fruit Basket Game",
           description:
-            "An interactive Unity game where players catch falling food items in a pot while avoiding bombs. Built with C# and Unity Asset Store assets, the game features progressive difficulty scaling, smooth animations, and polished UI/UX. Implements comprehensive testing practices including unit tests, play mode tests, and configuration tests to ensure code quality and reliability.",
+            "An interactive Unity game where players catch falling food items in a pot while avoiding bombs. Built with C# and Unity, features progressive difficulty scaling, physics-based interactions, and a polished UI.",
           features: [
             "Dynamic spawning system with falling food items and bombs.",
             "Progressive difficulty that increases as the timer counts down.",
@@ -100,10 +98,8 @@ export const translations = {
             "Game state management with start, play, and restart functionality.",
             "Collision detection using Rigidbody physics.",
             "Coroutines for timed events and asynchronous operations.",
-            "Comprehensive testing suite (Unit Tests, Play Mode Tests, Configuration Tests).",
+            "Comprehensive testing suite (Unit, Play Mode, Configuration).",
             "Polished UI with TextMesh Pro, sound effects, and VFX.",
-            "Custom gravity manipulation for realistic falling mechanics.",
-            "Prefab-based architecture for efficient object instantiation.",
           ],
           technologies:
             "Unity, C#, Unity Asset Store, TextMesh Pro, Rigidbody Physics, Coroutines, Unity Test Framework",
@@ -113,20 +109,16 @@ export const translations = {
         project4: {
           title: "Hangman Game iOS",
           description:
-            "An iOS Hangman game featuring two game modes: guess movie titles fetched from the OMDB API or random dictionary words. Built with Swift and UIKit, the app follows the MVC architecture pattern and includes tab-based navigation for seamless switching between game modes with a responsive design supporting both iPhone and iPad devices.",
+            "An iOS Hangman game featuring two game modes: guess movie titles fetched from the OMDB API or random dictionary words. Built with Swift and UIKit following the MVC architecture pattern.",
           features: [
-            "Two game modes: Movie titles (OMDB API) and Dictionary words (Random Word API).",
+            "Two game modes: Movie titles (OMDB API) and Dictionary words.",
             "Tab-based navigation for easy mode switching.",
             "Visual hangman progression with 7-stage drawing sequence.",
-            "Interactive letter keyboard with used letters tracking.",
-            "Automatic win/loss detection.",
-            "Restart game functionality for continuous play.",
-            "Responsive design with Auto Layout constraints for iPhone and iPad.",
-            "Landscape mode support on iPhone 14 Pro Max.",
+            "Interactive letter keyboard with tracking.",
+            "Responsive design with Auto Layout for iPhone and iPad.",
             "MVC architecture pattern for clean code organization.",
           ],
-          technologies:
-            "Swift 5, UIKit, URLSession, Storyboard, Tab Bar Controller, OMDB API, Random Word API, Auto Layout",
+          technologies: "Swift 5, UIKit, URLSession, OMDB API, Auto Layout",
           github: "https://github.com/Mercuryy200/HangmanSwfitGame",
           url: null,
         },
@@ -138,7 +130,7 @@ export const translations = {
     },
     experience: {
       title: "Experience",
-      viewMore: "Downlaod Resume",
+      viewMore: "Download Resume",
       fileName: "NafouguiRima_EN.pdf",
       items: [
         {
@@ -185,18 +177,18 @@ export const translations = {
         {
           status: "completed",
           date: "MAY 2026",
-          title: "Diploma in IT Programs",
+          title: "Diploma in Web & Apps",
           institution: "Collège Ahuntsic",
           description:
-            "Culmination of intensive training in full-stack web development, mobile applications (Swift/Kotlin), and systems analysis. Built strong foundations in programming logic and database management.",
+            "Graduating from intensive training in full-stack web development, mobile applications, and systems analysis. Built strong foundations in OOP, algorithms, and database management.",
         },
         {
           status: "active",
           date: "MARCH – AUGUST 2026",
           title: "Seeking Internship",
-          institution: "Web / Mobile / Tools Programming",
+          institution: "Software / Data Engineering",
           description:
-            "Available for a 6-month internship to apply skills in a professional setting. Eager to contribute to dynamic teams, particularly in roles involving React, Unity, or iOS development.",
+            "Immediate availability for a 6-month internship. Eager to contribute to dynamic teams using Next.js, Python, or Cloud technologies to build scalable solutions.",
         },
         {
           status: "future",
@@ -204,7 +196,7 @@ export const translations = {
           title: "BEng in Software Engineering",
           institution: "Concordia University",
           description:
-            "Beginning advanced studies to deepen theoretical knowledge in software architecture, algorithms, and large-scale system design, building upon the practical skills gained at Ahuntsic.",
+            "Incoming Engineering Student. Preparing to deepen theoretical knowledge in software architecture and large-scale system design while continuing to build practical projects.",
         },
       ],
     },
@@ -222,7 +214,7 @@ export const translations = {
       badge: "Disponible pour stages : Mars – Août 2026",
       intro: "Bonjour, je suis",
       description:
-        "Bienvenue! Je crée des expériences numériques fluides spécialisées dans le développement web et mobile. Explorez mes projets pour voir comment je combine logique technique et design créatif.",
+        "Bienvenue! Je suis une développeuse full-stack passionnée par l'ingénierie des données et l'IA. Je conçois des applications web évolutives et des pipelines de données automatisés, alliant logique technique et architecture moderne.",
       ctaProjects: "Voir mes projets",
       ctaResume: "Télécharger le CV",
       scroll: "Défiler",
@@ -232,22 +224,22 @@ export const translations = {
       accordion1: {
         title: "Parcours & Éducation",
         content:
-          " Salut, je suis un étudiant passionné en développement logiciel actuellement inscrit au programme technique à Ahuntsic College à Montréal. Je prévois de poursuivre un diplôme en génie logiciel à partir de l'automne 2026, combinant mon amour pour la technologie avec une éducation formelle pour construire une base solide en développement.",
+          "Salut, je suis une étudiante en développement logiciel finissant au Collège Ahuntsic en mai 2026. Je suis également future étudiante en génie logiciel à l'Université Concordia (Automne 2026). Je combine une formation technique formelle avec un apprentissage autodidacte en IA et en ingénierie des données.",
       },
       accordion2: {
         title: "Parcours",
         content:
-          "Mon parcours dans la technologie a commencé en 2020 lorsque j'ai construit mon premier PC. Ce qui a commencé comme un projet pratique s'est rapidement transformé en une curiosité insatiable sur le fonctionnement de la technologie sous le capot. Je me suis retrouvé à plonger profondément dans la compréhension des mécanismes derrière les outils et systèmes que nous utilisons chaque jour, me demandant toujours \"mais comment ça marche vraiment?\"",
+          "Mon parcours a commencé en 2020 par la construction de mon premier PC, éveillant une curiosité sur le fonctionnement des systèmes. Cela a évolué du matériel vers le logiciel, me menant au développement full-stack et, plus récemment, à la complexité des pipelines de données et des architectures d'apprentissage automatique.",
       },
       accordion3: {
         title: "Passion",
         content:
-          "Le développement logiciel est devenu l'intersection parfaite de mes intérêts - me permettant de mélanger mon côté créatif à travers le développement frontend avec ma nature analytique et logique dans le backend. Il y a quelque chose de profondément satisfaisant à créer une interface utilisateur intuitive tout en architecturant simultanément les systèmes robustes qui l'alimentent.",
+          "Je me situe à l'intersection du travail créatif frontend et de la logique backend analytique. J'aime concevoir des interfaces intuitives avec Next.js tout en architecturant simultanément des systèmes de données robustes utilisant Python, SQL et des bases de données vectorielles.",
       },
       accordion4: {
         title: "Ce qui me motive",
         content:
-          "Quand je ne code pas, vous me trouverez à la salle de sport ou en train de me lancer le défi d'apprendre de nouvelles langues - je crois en l'expansion constante de mes compétences tant dans le monde de la technologie qu'en dehors. Ce qui me motive le plus en tant que développeur, c'est la nature incrémentale de la construction de logiciels. Je suis fasciné non seulement par le produit final, mais par tout le parcours - chaque commit, chaque percée et chaque leçon apprise en cours de route. Voir jusqu'où je suis allé depuis cette première construction de PC jusqu'au développement d'applications full-stack me rappelle pourquoi je suis tombé amoureux de la technologie en premier lieu. Actuellement, je suis toujours désireux de relever de nouveaux défis et de collaborer sur des projets qui me poussent à grandir en tant que développeur.",
+          "Au-delà du code, j'apprends constamment—que ce soit de nouvelles langues parlées ou des technologies comme le RAG (Génération Augmentée par Récupération). Je suis motivée par le défi d'ingénierie consistant à optimiser les performances, automatiser les flux de travail et créer des logiciels qui résolvent des problèmes réels.",
       },
     },
     skills: {
@@ -264,56 +256,52 @@ export const translations = {
       title: "Projets",
       items: {
         project1: {
-          title: "Portfolio Personnel",
+          title: "Assistant de Recherche ArXiv RAG",
           description:
-            "Mon portfolio personnel, construit avec Next.js et Tailwind CSS, met en avant mes compétences en développement web. Il présente mes projets, compétences et expériences, offrant une interface utilisateur moderne et réactive. Explorez-le pour découvrir mon parcours en tant que développeur.",
+            "Un pipeline IA automatisé qui extrait des articles de recherche et permet aux utilisateurs de 'discuter' avec eux. Utilise une architecture RAG (Génération Augmentée par Récupération) pour fournir des réponses précises et citées.",
           features: [
-            "Développement avec Next.js pour des performances optimales.",
-            "Design réactif utilisant Tailwind CSS.",
-            "Présentation de projets et compétences.",
-            "Intégration de Framer Motion pour des animations fluides.",
-            "Icônes vectorielles avec FontAwesome.",
-            "Déploiement facile via Vercel.",
+            "Pipeline ETL automatisé via GitHub Actions (Scraping hebdomadaire).",
+            "Génération d'embeddings vectoriels avec 'sentence-transformers'.",
+            "Recherche sémantique utilisant Supabase et pgvector.",
+            "Intégration d'IA générative avec Google Gemini Pro LLM.",
+            "Frontend Streamlit avec mise en cache ultra-rapide.",
+            "Architecture auto-réparatrice gérant les données PDF non structurées.",
           ],
           technologies:
-            "Next.js, Tailwind CSS, Framer Motion, FontAwesome, Vercel, Nodemailer",
-          github: "https://github.com/Mercuryy200/PersonalPortfolio",
-          url: "https://rimanafougui.com",
+            "Python, Supabase (pgvector), Google Gemini API, GitHub Actions, Streamlit, Pandas",
+          github: "https://github.com/Mercuryy200/arxiv-search-engine",
+          url: "https://arxiv-search-app.streamlit.app",
         },
         project2: {
-          title: "Gestionnaire de Garde-robe Intelligent",
+          title: "RCapsule - Gestionnaire de Garde-robe Intelligent",
           description:
-            "Une application full-stack de gestion de garde-robe construite avec Next.js et Prisma. Elle permet aux utilisateurs d'organiser numériquement leurs vêtements, de suivre leurs achats et de planifier leurs tenues. Comprend une authentification sécurisée, le stockage d'images et une interface responsive pour gérer toute votre garde-robe en un seul endroit.",
+            "Une application full-stack de gestion de garde-robe intégrant des recommandations IA. Elle combine une authentification sécurisée, des interactions en temps réel et une logique basée sur la météo pour organiser efficacement la garde-robe.",
           features: [
-            "Authentification sécurisée avec NextAuth.js (GitHub et identifiants).",
-            "Opérations CRUD complètes pour les vêtements avec mises à jour en temps réel.",
-            "Catégorisation à sélection multiple (couleurs, occasions, saisons).",
-            "Support d'URL d'images pour une représentation visuelle de la garde-robe.",
+            "Recommandations de tenues IA via OpenAI API et OpenWeatherMap.",
+            "Authentification sécurisée avec NextAuth.js.",
+            "Opérations en temps réel via Supabase (PostgreSQL).",
+            "Interface responsive avec stockage d'images.",
             "Suivi des prix et historique des achats.",
-            "Interface responsive basée sur des cartes avec les composants Hero UI.",
-            "Base de données PostgreSQL avec Prisma ORM pour la persistance des données.",
-            "Routes protégées avec middleware d'authentification.",
+            "Performance optimisée avec middleware protégé.",
           ],
           technologies:
-            "Next.js 15, TypeScript, Prisma ORM, PostgreSQL, NextAuth.js, Hero UI, Tailwind CSS, bcrypt",
+            "Next.js, TypeScript, PostgreSQL, Supabase, OpenAI API, NextAuth.js, Tailwind CSS",
           github: "https://github.com/Mercuryy200/ClosetOrganizer",
-          url: "https://vesticloset.vercel.app",
+          url: "https://rcapsule.com",
         },
         project3: {
           title: "Jeu Panier de Fruits",
           description:
-            "Un jeu Unity interactif où les joueurs attrapent des aliments qui tombent dans un pot tout en évitant les bombes. Construit avec C# et des assets du Unity Asset Store, le jeu propose une difficulté progressive, des animations fluides et une interface utilisateur soignée. Implémente des pratiques de tests complètes incluant des tests unitaires, des tests en mode lecture et des tests de configuration pour assurer la qualité et la fiabilité du code.",
+            "Un jeu Unity interactif où les joueurs attrapent des aliments qui tombent dans un pot tout en évitant les bombes. Construit avec C# et des assets Unity, il propose une difficulté progressive et des interactions basées sur la physique.",
           features: [
             "Système de génération dynamique avec aliments tombants et bombes.",
-            "Difficulté progressive qui augmente à mesure que le minuteur diminue.",
-            "Système de suivi des points avec mises à jour UI en temps réel.",
-            "Gestion de l'état du jeu avec fonctionnalités de démarrage et redémarrage.",
-            "Détection de collision utilisant la physique Rigidbody.",
-            "Coroutines pour les événements temporisés et opérations asynchrones.",
-            "Suite de tests complète (Tests Unitaires, Tests en Mode Lecture, Tests de Configuration).",
-            "Interface utilisateur soignée avec TextMesh Pro, effets sonores et VFX.",
-            "Manipulation personnalisée de la gravité pour des mécaniques de chute réalistes.",
-            "Architecture basée sur des prefabs pour une instantiation d'objets efficace.",
+            "Difficulté progressive qui augmente avec le temps.",
+            "Système de suivi des points et mises à jour UI en temps réel.",
+            "Gestion complète de l'état du jeu (start, play, restart).",
+            "Détection de collision via physique Rigidbody.",
+            "Utilisation de Coroutines pour les événements asynchrones.",
+            "Suite de tests complète (Unitaires, Mode Lecture).",
+            "Interface soignée avec TextMesh Pro et VFX.",
           ],
           technologies:
             "Unity, C#, Unity Asset Store, TextMesh Pro, Physique Rigidbody, Coroutines, Unity Test Framework",
@@ -323,20 +311,16 @@ export const translations = {
         project4: {
           title: "Jeu du Pendu iOS",
           description:
-            "Un jeu du pendu iOS proposant deux modes de jeu : deviner des titres de films récupérés via l'API OMDB ou des mots aléatoires du dictionnaire. Développé avec Swift et UIKit, l'application suit le modèle d'architecture MVC et intègre une navigation par onglets pour basculer facilement entre les modes de jeu, avec un design adaptatif compatible iPhone et iPad.",
+            "Un jeu du pendu iOS proposant deux modes de jeu : deviner des titres de films (API OMDB) ou des mots aléatoires. Développé avec Swift et UIKit suivant l'architecture MVC.",
           features: [
-            "Deux modes de jeu : Titres de films (API OMDB) et Mots du dictionnaire (Random Word API).",
-            "Navigation par onglets pour changer facilement de mode.",
-            "Progression visuelle du pendu avec séquence de dessin en 7 étapes.",
-            "Clavier de lettres interactif avec suivi des lettres utilisées.",
-            "Détection automatique de victoire/défaite.",
-            "Fonctionnalité de redémarrage pour jouer en continu.",
-            "Design adaptatif avec contraintes Auto Layout pour iPhone et iPad.",
-            "Support du mode paysage sur iPhone 14 Pro Max.",
-            "Architecture MVC pour une organisation de code claire.",
+            "Deux modes de jeu : Titres de films (API OMDB) et Mots du dictionnaire.",
+            "Navigation par onglets fluide.",
+            "Progression visuelle du pendu avec séquences.",
+            "Clavier interactif avec suivi.",
+            "Design adaptatif pour iPhone et iPad.",
+            "Architecture MVC pour un code structuré.",
           ],
-          technologies:
-            "Swift 5, UIKit, URLSession, Storyboard, Tab Bar Controller, API OMDB, Random Word API, Auto Layout",
+          technologies: "Swift 5, UIKit, URLSession, API OMDB, Auto Layout",
           github: "https://github.com/Mercuryy200/HangmanSwfitGame",
           url: null,
         },
@@ -395,18 +379,18 @@ export const translations = {
         {
           status: "completed",
           date: "MAI 2026",
-          title: "Diplôme d'études collégiales (DEC)",
+          title: "Technique Informatique (DEC)",
           institution: "Collège Ahuntsic",
           description:
-            "Achèvement d'une formation technique intensive spécialisée en programmation web full-stack, applications mobiles (Swift/Kotlin) et analyse de systèmes. Consolidation des bases en logique algorithmique et gestion de bases de données.",
+            "Finissant d'une formation intensive en développement web full-stack, applications mobiles et analyse de systèmes. Bases solides en POO, algorithmes et gestion de bases de données.",
         },
         {
           status: "active",
           date: "MARS – AOÛT 2026",
           title: "Recherche de Stage",
-          institution: "Dév. Web / Mobile / Outils",
+          institution: "Génie Logiciel / Données",
           description:
-            "Disponibilité immédiate pour un stage de 4 à 6 mois. Objectif : appliquer mes compétences en React, Unity et Swift au sein d'une équipe de développement dynamique tout en contribuant à des projets d'envergure.",
+            "Disponibilité immédiate pour un stage de 6 mois. Désireuse de contribuer à des équipes dynamiques utilisant Next.js, Python ou le Cloud pour bâtir des solutions évolutives.",
         },
         {
           status: "future",
@@ -414,7 +398,7 @@ export const translations = {
           title: "Baccalauréat en Génie Logiciel",
           institution: "Université Concordia",
           description:
-            "Début des études supérieures pour approfondir les connaissances théoriques en architecture logicielle, algorithmes complexes et conception de systèmes à grande échelle, en s'appuyant sur les compétences pratiques acquises à Ahuntsic.",
+            "Future étudiante en génie. Prête à approfondir les connaissances théoriques en architecture logicielle et conception de systèmes à grande échelle tout en continuant les projets pratiques.",
         },
       ],
     },

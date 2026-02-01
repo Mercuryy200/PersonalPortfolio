@@ -38,7 +38,7 @@ export default function Header({ t, language, setLanguage }: Props) {
               </span>
               <div className="hidden md:block h-px w-0 group-hover:w-12 bg-cartier transition-all duration-700" />
             </div>
-          </Link>
+          </Link> 
 
           <div className="hidden lg:flex lg:items-center lg:space-x-10">
             {navigation.map((item) => (
